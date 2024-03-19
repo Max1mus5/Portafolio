@@ -1,0 +1,26 @@
+:root {
+  --white: #f9fafb;
+  --dark-gray-1: #353b41;
+  --dark-gray-2: #6d767e;
+  --light-gray: #adb5bd;
+  --dark: #22262a;
+  --black: #1a1a1a;
+  --light-blue: #a2c1d8;
+  --gray: #333333;
+  --dark-red: #990000;
+  --red: #cc0000;
+  --dark-gray-3: #262626;
+}
+
+body{
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.portafolio{
+  backdrop-filter: blur(10px);
+}
+
