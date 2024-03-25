@@ -1,4 +1,4 @@
-<img src="./src/assets/jeronimo.png">
+<img src="./portafolioproyect/src/assets/jeronimo.png">
 Este es el repositorio del código fuente de mi portafolio personal. Este proyecto está diseñado para mostrar mi trabajo, habilidades y experiencia a posibles empleadores, clientes o colaboradores.
 
 ## Deploy
