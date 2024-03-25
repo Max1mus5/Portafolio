@@ -3,7 +3,7 @@ Este es el repositorio del código fuente de mi portafolio personal. Este proyec
 
 ## Deploy
 
-Puedes ver la aplicación en [Portafolio]()
+Puedes ver la aplicación en [Portafolio](https://jeronimo-riveros.netlify.app/)
 ## Tecnologías Utilizadas
 
 - **React.js:** El frontend del sitio web está construido con React.js para crear una experiencia de usuario interactiva y dinámica.
