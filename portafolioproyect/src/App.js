@@ -125,7 +125,7 @@ return (
         />
       </div>
     )}
-    {language =='en' ? <PortafolioTraduce language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" />  : <Portafolio language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" /> }
+    {language === 'en' ? <PortafolioTraduce language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" />  : <Portafolio language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" /> }
   </div>
 );
 }
