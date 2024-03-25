@@ -19,6 +19,7 @@ const [darkMode, setDarkMode] = useState(() => {
 
 const toggleDarkMode = () => {
   setDarkMode(!darkMode);
+  {darkMode ? document.body.style.backgroundColor ='white' : document.body.style.backgroundColor ='#1a1a1a'}
 };
 
 const toggleLanguage = () => {
@@ -30,7 +31,6 @@ const toggleLanguage = () => {
  // Actualiza el localStorage cuando el estado darkMode cambia
 useEffect(() => {
   window.localStorage.setItem('theme', darkMode ? 'light' : 'dark');
-  console.log("****************************************************************APP********************",darkMode);
 }, [darkMode]);
 const [init, setInit] = useState(false);
 useEffect(() => {
@@ -42,7 +42,6 @@ useEffect(() => {
 }, []);
 
 const particlesLoaded = (container) => {
-  console.log(container);
 };
 
 return (

@@ -872,10 +872,14 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
 }
 
 @media screen and (max-width: 880px) {
-  .projects-section{
+  .projects-section, .projects-section-ligth{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 10%;
+  }
+
+  .project .img{
+    top: calc(80px + -60px);
   }
 
   .tecnologies-icons{

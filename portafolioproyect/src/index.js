@@ -13,9 +13,7 @@ return savedTheme ? savedTheme === 'light' : true;
 });
 
 useEffect(() => {
-    // Actualiza el estilo del body en función del modo oscuro
    document.body.style.backgroundColor = darkMode ? '#1a1a1a' : 'white';
-   console.log("****************************************************************INDEX********************",darkMode);
 }, [darkMode]);
 
 useEffect(() => {
