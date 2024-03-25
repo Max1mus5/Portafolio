@@ -24,8 +24,11 @@
   padding: 4px 20px;
   align-items: center;
   width: 78.494%; /* XD because yes */
+  max-width: 1550px;
+  max-height: 100%;
   margin: 0 auto;
   gap: 30px;
+  user-select: none;
 }
 
 
@@ -42,6 +45,7 @@
   top: 0px;
   z-index: 999;
   border-radius: 0px 0px 10px 10px;
+  user-select: none;
 }
 
 #main-navbar .navbar-features{
@@ -856,4 +860,80 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   100% {
     border-color: #4d62ff;
 }
+}
+
+@media screen and (max-width: 1105px) {
+  .tecnologies-icons{
+    gap: 10px;
+    width: auto;
+    /* margin top segun aumenta gradualmente si el width de la pantalla disminuye utiliza calc()*/
+    margin-top:10%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .projects-section{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10%;
+  }
+
+  .tecnologies-icons{
+    gap: 10px;
+    width: auto;
+    /* margin top segun aumenta gradualmente si el width de la pantalla disminuye utiliza calc()*/
+    margin-top:0%;
+  }
+}
+
+/* Estilos base para móviles */
+@media screen and (max-width: 480px) {
+
+  .portafolio-scroll{
+    min-width: 500px;
+    margin: 0px;
+  }
+
+ .topflex-tecnologies-section{
+  justify-content: center;
+  margin: 0px;
+ }
+
+ #main-navbar{
+  justify-content: space-around ;
+  }
+
+  .presentation .button {
+    --fs-size:41px;
+  }
+
+ .footer{
+  font-size: 10px;
+ }
+  
+}
+
+/* Estilos para tablets en modo retrato */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .presentation .button{
+    --fs-size: 39px;
+  }
+}
+
+@media screen and (min-width:482px) and (max-width: 600px){
+  .presentation .button{
+    --fs-size: 35px;
+  }
+}
+
+/* Estilos para tablets en modo paisaje */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+.presentation .button{
+  --fs-size: 41px;
+}
+}
+
+/* Estilos para escritorio */
+@media screen and (min-width: 1025px) {
+/* Aquí van los estilos específicos para escritorio */
 }

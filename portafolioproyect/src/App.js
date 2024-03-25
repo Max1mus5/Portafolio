@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Portafolio from './components/portafolio.jsx';
+import PortafolioTraduce from './components/portafolio-traduce.jsx';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
 function App() {
-const getInitialTheme = () => {
-  const storedTheme = window.localStorage.getItem('darkMode');
-  return storedTheme !== null ? JSON.parse(storedTheme) : true;
+const [language, setLanguage] = useState(() => {
+    const savedLanguage = window.localStorage.getItem('language');
+    return savedLanguage ? savedLanguage : 'en'; 
+  });
+
+const [darkMode, setDarkMode] = useState(() => {
+  const savedTheme = window.localStorage.getItem('theme');
+  return savedTheme ? savedTheme === 'light' : true; // Inicia en modo oscuro si no hay preferencia almacenada
+  });
+  
+
+const toggleDarkMode = () => {
+  setDarkMode(!darkMode);
 };
 
-const [init, setInit] = useState(false);
-const [darkMode, setDarkMode] = useState(getInitialTheme);
+const toggleLanguage = () => {
+  setLanguage(language === 'en' ? 'es' : 'en');
+  /* guardar en cache */
+  window.localStorage.setItem('language', language === 'en' ? 'es' : 'en');
+};
 
+ // Actualiza el localStorage cuando el estado darkMode cambia
+useEffect(() => {
+  window.localStorage.setItem('theme', darkMode ? 'light' : 'dark');
+  console.log("****************************************************************APP********************",darkMode);
+}, [darkMode]);
+const [init, setInit] = useState(false);
 useEffect(() => {
   initParticlesEngine(async (engine) => {
     await loadSlim(engine);
@@ -21,12 +41,6 @@ useEffect(() => {
   });
 }, []);
 
-const toggleDarkMode = () => {
-  const newDarkMode = !darkMode;
-  setDarkMode(newDarkMode);
-  window.localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
-};
-
 const particlesLoaded = (container) => {
   console.log(container);
 };
@@ -34,79 +48,84 @@ const particlesLoaded = (container) => {
 return (
   <div className="App">
     {init && (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={{
-          background: {
-            color: {
-              value: darkMode ? "#1a1a1a" : "#f9fafb",
+      <div  className="particles-container">
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={{
+            fullScreen: {
+              enable: false, 
             },
-          },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: {
+            background: {
+              color: {
+                value: darkMode ? "#1a1a1a" : "#f9fafb",
+              },
+            },
+            fpsLimit: 60,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+              },
+              modes: {
+                push: {
+                  quantity: 2,
+                },
+                repulse: {
+                  distance: 100,
+                  duration: 1,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: darkMode ? "#ffffff" : "#",
+              },
+              links: {
+                color: darkMode ? "#ffffff" : "#000000",
+                distance: 150,
                 enable: true,
-                mode: "push",
+                opacity: 0.5,
+                width: 1,
               },
-              onHover: {
+              move: {
+                direction: "none",
                 enable: true,
-                mode: "repulse",
+                outModes: {
+                  default: "bounce",
+                },
+                random: true,
+                speed: 3,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                },
+                value: 80,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 5 },
               },
             },
-            modes: {
-              push: {
-                quantity: 2,
-              },
-              repulse: {
-                distance: 100,
-                duration: 1,
-              },
-            },
-          },
-          particles: {
-            color: {
-              value: darkMode ? "#ffffff" : "#",
-            },
-            links: {
-              color: darkMode ? "#ffffff" : "#000000",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: true,
-              speed: 3,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
-          },
-          detectRetina: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      </div>
     )}
-      <Portafolio darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" />
+    {language =='en' ? <PortafolioTraduce language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" />  : <Portafolio language={toggleLanguage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} className="portafolio" /> }
   </div>
 );
 }

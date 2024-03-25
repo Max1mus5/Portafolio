@@ -15,12 +15,14 @@ import js from "../assets/js-icon.svg";
 import mysql from "../assets/mysql-icon.svg";
 
 
-const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
+const PortafolioTraduce = ({ language, darkMode, toggleDarkMode }) => {
   const [emailcopied, setEmailcopied] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = window.localStorage.getItem('theme');
     return savedTheme ? savedTheme === 'ligth' : darkMode;
   });
+
+
 
   useEffect(() => {
     setIsDarkMode(darkMode);
@@ -54,13 +56,13 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
             <img className="logoportafolio" src={logo} alt="Logo" />  
             </div>
             <div className="navbar-features">
-              <button onClick={language} title="Traduce"><span className="material-symbols-outlined traduce-icon">
+              <button onClick={language} title="Traduce to Spanish"><span className="material-symbols-outlined traduce-icon">
 translate
 </span></button>
               <button title="Switch theme" onClick={toggleDarkMode} ><span className="material-symbols-outlined sun-theme-icon">
 wb_sunny
 </span></button>
-              <a href="https://drive.google.com/file/d/1umPmSz62mq-bcXOoYK397h3dXubwrb-H/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>Descargar CV</a> 
+              <a href="https://drive.google.com/file/d/1umPmSz62mq-bcXOoYK397h3dXubwrb-H/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>DownLoad CV</a> 
             </div>
         </nav>
         <section className="aboutme-section" id="aboutme">
@@ -114,15 +116,15 @@ wb_sunny
 
           <div className="aboutme-little-description">
             <p className="effect" id="aboutme-little-description-content">
-              Soy un desarrollador Full Stack con habilidades en tecnologías clave como JavaScript, React, Node.js, Express, MySQL, entre otras. Mi enfoque se centra en la resolución efectiva de problemas y en superar la expectativas. Me destaco por mi capacidad para colaborar en equipo y adaptarme rápidamente a nuevos entornos y tecnologías. Busco constantemente oportunidades para expandir mi conocimiento y mejorar mis habilidades técnicas. Con una actitud proactiva y un compromiso con la excelencia, estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe.
+            I am a Full Stack developer with skills in key technologies such as JavaScript, React, Node.js, Express, MySQL, among others. My focus is on effective problem solving and exceeding expectations. I excel in my ability to collaborate in a team and adapt quickly to new environments and technologies. I constantly seek opportunities to expand my knowledge and improve my technical skills. With a proactive attitude and a commitment to excellence, I am prepared to face challenges and contribute to the success of any project I am involved in.
             </p>
           </div>
         </div>
         </section>
 
         <header className="projects-header">
-            <h1 id="project-title">Proyectos</h1>
-            <p id="project-text">Algunos proyectos que he desarrolado</p>
+            <h1 id="project-title">Projects</h1>
+            <p id="project-text">Some projects I have developed</p>
         </header>
 
         <section className="projects-section"  id="projects">
@@ -158,7 +160,7 @@ wb_sunny
             </div>
               <div className="project-details">
                 <h2 className="title">MasterVault</h2>
-                <p>Administrador y Generador de contraseñas</p>
+                <p>Password Manager and Password Generator</p>
                   <div className="tecnologies-icons">
                   <span className="icon_tech"><img src={react_icon} alt="react_icon" /></span>
                   <span className="icon_tech"><img src={python} alt="" /></span>
@@ -202,7 +204,7 @@ wb_sunny
             </div>
               <div className="project-details">
                 <h2 className="title">Clim-J</h2>
-                <p>Una aplicación simple para consultar el pronóstico del tiempo en tiempo real</p>
+                <p>A simple application to consult the weather forecast in real time.</p>
                 <div className="tecnologies-icons">
                   <span className="icon_tech climj"><img src={react_icon} alt="react_icon" /></span>
                   <span className="icon_tech climj"><img src={css3} alt="" /></span>
@@ -216,7 +218,7 @@ wb_sunny
         </section>
 
         <header className="tecnologies-header">
-          <h1 id="tecnologies-title">Tecnologías</h1>
+          <h1 id="tecnologies-title">Technologies</h1>
         </header>
 
         <section class="tecnologies-section" id="tecnologies">
@@ -262,8 +264,8 @@ wb_sunny
         <footer className="footer" id="dark"> 
           <div className="footer-credits">
             <p>© 2024 Jeronimo Riveros.</p>
-            <p>Todos los derechos Reservados</p>
-            <p>Hecho con React</p>
+            <p>All rights reserved</p>
+            <p>Made with React</p>
           </div>
           <div className="footer-contact">
           <div className="footer-icons">
@@ -277,7 +279,7 @@ wb_sunny
               </div>
 
               <div className="updated">
-                Última Actualización: 18 de Marzo del 2024
+              Last Update: March 18, 2024
               </div>
           </div>
           </div>
@@ -292,13 +294,13 @@ wb_sunny
             <img className="logoportafolio" src={logo} alt="Logo" />  
             </div>
             <div className="navbar-features">
-              <button onClick={language} title="Traduce"><span className="material-symbols-outlined traduce-icon ligthModeTraduce">
+              <button onClick={language} title="Traduce To Spanish"><span className="material-symbols-outlined traduce-icon ligthModeTraduce">
 translate
 </span></button>
               <button title="Switch theme" onClick={toggleDarkMode} ><span class="material-symbols-outlined moon-theme-icon">
 dark_mode
 </span></button>
-              <a className="ligth_Mode" href="https://drive.google.com/file/d/1SWq582r6thFDvr3MjDf5U40-nnWDw9by/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>Descargar CV</a> 
+              <a className="ligth_Mode" href="https://drive.google.com/file/d/1SWq582r6thFDvr3MjDf5U40-nnWDw9by/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>DownLoad CV</a> 
             </div>
         </nav>
         <section className="aboutme-section" id="aboutme">
@@ -352,15 +354,15 @@ dark_mode
 
           <div className="aboutme-little-description">
             <p className="effect" id="aboutme-little-description-ligth">
-              Soy un desarrollador Full Stack con habilidades en tecnologías clave como JavaScript, React, Node.js, Express, MySQL, entre otras. Mi enfoque se centra en la resolución efectiva de problemas y en superar la expectativas. Me destaco por mi capacidad para colaborar en equipo y adaptarme rápidamente a nuevos entornos y tecnologías. Busco constantemente oportunidades para expandir mi conocimiento y mejorar mis habilidades técnicas. Con una actitud proactiva y un compromiso con la excelencia, estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe.
+            I am a Full Stack developer with skills in key technologies such as JavaScript, React, Node.js, Express, MySQL, among others. My focus is on effective problem solving and exceeding expectations. I excel in my ability to collaborate in a team and adapt quickly to new environments and technologies. I constantly seek opportunities to expand my knowledge and improve my technical skills. With a proactive attitude and a commitment to excellence, I am prepared to face challenges and contribute to the success of any project I am involved in.
             </p>
           </div>
         </div>
         </section>
 
         <header className="projects-header-ligth">
-            <h1 id="project-title">Proyectos</h1>
-            <p id="project-text">Algunos proyectos que he desarrolado</p>
+            <h1 id="project-title">Projects</h1>
+            <p id="project-text">Some projects I have developed</p>
         </header>
 
         <section className="projects-section-ligth"  id="projects">
@@ -396,7 +398,7 @@ dark_mode
             </div>
               <div className="project-details">
                 <h2 className="title">MasterVault</h2>
-                <p>Administrador y Generador de contraseñas</p>
+                <p>Password Manager and Password Generator</p>
                   <div className="tecnologies-icons" id="tecnologies-ligth">
                   <span className="icon_tech"><img src={react_icon} alt="react_icon" /></span>
                   <span className="icon_tech"><img src={python} alt="" /></span>
@@ -441,7 +443,7 @@ dark_mode
             </div>
               <div className="project-details">
                 <h2 className="title">Clim-J</h2>
-                <p>Una aplicación simple para consultar el pronóstico del tiempo en tiempo real</p>
+                <p>A simple application to consult the weather forecast in real time.</p>
                 <div className="tecnologies-icons">
                   <span className="icon_tech climj"><img src={react_icon} alt="react_icon" /></span>
                   <span className="icon_tech climj"><img src={css3} alt="" /></span>
@@ -455,7 +457,7 @@ dark_mode
         </section>
 
         <header className="tecnologies-header">
-          <h1 id="tecnologies-title" className="tecnologies-title-ligth">Tecnologías</h1>
+          <h1 id="tecnologies-title" className="tecnologies-title-ligth">Technologies</h1>
         </header>
 
         <section class="tecnologies-section" id="tecnologies">
@@ -500,8 +502,8 @@ dark_mode
         <footer className="footer" id="dark"> 
           <div className="footer-credits">
             <p>© 2024 Jeronimo Riveros.</p>
-            <p>Todos los derechos Reservados</p>
-            <p>Hecho con React</p>
+            <p>All rights reserved</p>
+            <p>Made with React</p>
           </div>
           <div className="footer-contact">
           <div className="footer-icons">
@@ -515,7 +517,7 @@ dark_mode
               </div>
 
               <div className="updated">
-                Última Actualización: 18 de Marzo del 2024
+              Last Update: March 18, 2024
               </div>
           </div>
           </div>
@@ -533,4 +535,4 @@ dark_mode
 
 }
 
-export default Portafolio;
+export default PortafolioTraduce;
