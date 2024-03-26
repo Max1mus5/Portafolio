@@ -59,7 +59,7 @@ return (
             },
             background: {
               color: {
-                value: darkMode ? "#1a1a1a" : "#f9fafb",
+                value: darkMode ? "#1a1a1a" : "white",
               },
             },
             fpsLimit: 60,
