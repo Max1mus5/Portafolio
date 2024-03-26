@@ -297,6 +297,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.copied-light{
+  color: var(--black);
+  font-weight: bold;
+  font-size: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+
 .presentation .aboutme-icons {
   display: flex;
   flex-direction: row;
@@ -307,6 +315,8 @@
   width: 100%;
   height: auto;
 }
+
+.presentation .aboutme-icons svg {cursor: pointer;}
 
 .presentation .aboutme-icons a{
   display: flex;
