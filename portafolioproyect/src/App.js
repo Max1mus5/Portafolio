@@ -49,8 +49,8 @@ useEffect(() => {
 return (
   <div className="App">
     {init && (
-      <div  className="particles-container">
-        <Particles
+      <div className={`particles-container ${init ? 'fadeIn' : ''}`}>
+      <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={{
