@@ -6,6 +6,18 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
 function App() {
+  const [init, setInit] = useState(false);
+useEffect(() => {
+  initParticlesEngine(async (engine) => {
+    await loadSlim(engine);
+  }).then(() => {
+    setInit(true);
+  });
+}, []);
+
+const particlesLoaded = (container) => {
+};
+
 const [language, setLanguage] = useState(() => {
     const savedLanguage = window.localStorage.getItem('language');
     return savedLanguage ? savedLanguage : 'en'; 
@@ -32,17 +44,7 @@ const toggleLanguage = () => {
 useEffect(() => {
   window.localStorage.setItem('theme', darkMode ? 'light' : 'dark');
 }, [darkMode]);
-const [init, setInit] = useState(false);
-useEffect(() => {
-  initParticlesEngine(async (engine) => {
-    await loadSlim(engine);
-  }).then(() => {
-    setInit(true);
-  });
-}, []);
 
-const particlesLoaded = (container) => {
-};
 
 return (
   <div className="App">

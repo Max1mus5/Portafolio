@@ -122,7 +122,7 @@ wb_sunny
 
         <header className="projects-header">
             <h1 id="project-title">Proyectos</h1>
-            <p id="project-text">Algunos proyectos que he desarrolado</p>
+            <p id="project-text">Algunos proyectos que he desarrollado</p>
         </header>
 
         <section className="projects-section"  id="projects">
@@ -151,7 +151,7 @@ wb_sunny
                 </g>
                 </svg>
               </a>
-              <a href="https://mastervault.vercel.app/" title="MasterVault Demo"><span target="_blanck" class="material-symbols-outlined">
+              <a href="https://mastervault.vercel.app/" title="MasterVault Demo"><span target="_blanck" className="material-symbols-outlined">
                 link
                 </span></a>
               </div>
@@ -195,7 +195,7 @@ wb_sunny
                 </g>
                 </svg>
               </a>
-              <a href="https://weather-app-max1mus5.vercel.app/" target="_blank" title="MasterVault Demo"><span class="material-symbols-outlined">
+              <a href="https://weather-app-max1mus5.vercel.app/" target="_blank" title="MasterVault Demo"><span className="material-symbols-outlined">
                 link
                 </span></a>
               </div>
@@ -219,40 +219,40 @@ wb_sunny
           <h1 id="tecnologies-title">Tecnologías</h1>
         </header>
 
-        <section class="tecnologies-section" id="tecnologies">
-          <div class="topflex-tecnologies-section">
-            <div class="tecnologies tech">
+        <section className="tecnologies-section" id="tecnologies">
+          <div className="topflex-tecnologies-section">
+            <div className="tecnologies tech">
               <h2>Front-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i class="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
-                <li><i class="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
-                <li><i class="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
-                <li><i class="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
+                <li><i className="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
+                <li><i className="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
+                <li><i className="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
+                <li><i className="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
               </ul>
               </div>
             </div>
-            <div class="tecnologies tech">
+            <div className="tecnologies tech">
               <h2>Back-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i class="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
-                <li><i class="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
-                <li><i class="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
-                <li><i class="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
-                <li><i class="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
+                <li><i className="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
+                <li><i className="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
+                <li><i className="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
+                <li><i className="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
+                <li><i className="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
 
               </ul>
               </div>
             </div>
           </div>
-          <div class="tecnologies tools">
+          <div className="tecnologies tools">
             <h2>Tools</h2>
             <div className="icon-grid-view">
               <ul>
-              <li><i class="icon git"></i> <img className="icon-img-tech" src={git} alt="" /></li>
-              <li><i class="icon code"></i> <img className="icon-img-tech" src={postman} alt="" /></li>
-              <li><i class="icon figma"></i> <img className="icon-img-tech" src={figma} alt="" /></li>
+              <li><i className="icon git"></i> <img className="icon-img-tech" src={git} alt="" /></li>
+              <li><i className="icon code"></i> <img className="icon-img-tech" src={postman} alt="" /></li>
+              <li><i className="icon figma"></i> <img className="icon-img-tech" src={figma} alt="" /></li>
             </ul>
             </div>
           </div>
@@ -295,10 +295,10 @@ wb_sunny
               <button onClick={language} title="Traduce"><span className="material-symbols-outlined traduce-icon ligthModeTraduce">
 translate
 </span></button>
-              <button title="Switch theme" onClick={toggleDarkMode} ><span class="material-symbols-outlined moon-theme-icon">
+              <button title="Switch theme" onClick={toggleDarkMode} ><span className="material-symbols-outlined moon-theme-icon">
 dark_mode
 </span></button>
-              <a className="ligth_Mode" href="https://drive.google.com/file/d/1SWq582r6thFDvr3MjDf5U40-nnWDw9by/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>Descargar CV</a> 
+              <a className="ligth_Mode" href="https://drive.google.com/file/d/1umPmSz62mq-bcXOoYK397h3dXubwrb-H/view?usp=sharing" target='_blank'><span className="material-symbols-outlined icon_download">cloud_download</span>Descargar CV</a> 
             </div>
         </nav>
         <section className="aboutme-section" id="aboutme">
@@ -360,7 +360,7 @@ dark_mode
 
         <header className="projects-header-ligth">
             <h1 id="project-title">Proyectos</h1>
-            <p id="project-text">Algunos proyectos que he desarrolado</p>
+            <p id="project-text">Algunos proyectos que he desarrollado</p>
         </header>
 
         <section className="projects-section-ligth"  id="projects">
@@ -389,7 +389,7 @@ dark_mode
                 </g>
                 </svg>
               </a>
-              <a href="https://mastervault.vercel.app/" title="MasterVault Demo"><span target="_blanck" class="material-symbols-outlined">
+              <a href="https://mastervault.vercel.app/" title="MasterVault Demo"><span target="_blanck" className="material-symbols-outlined">
                 link
                 </span></a>
               </div>
@@ -434,7 +434,7 @@ dark_mode
                 </g>
                 </svg>
               </a>
-              <a href="https://weather-app-max1mus5.vercel.app/" target="_blank" title="MasterVault Demo"><span class="material-symbols-outlined">
+              <a href="https://weather-app-max1mus5.vercel.app/" target="_blank" title="MasterVault Demo"><span className="material-symbols-outlined">
                 link
                 </span></a>
               </div>
@@ -458,46 +458,46 @@ dark_mode
           <h1 id="tecnologies-title" className="tecnologies-title-ligth">Tecnologías</h1>
         </header>
 
-        <section class="tecnologies-section" id="tecnologies">
-          <div class="topflex-tecnologies-section">
-            <div class="tecnologies tech">
+        <section className="tecnologies-section" id="tecnologies">
+          <div className="topflex-tecnologies-section">
+           <div className={darkMode ?"tecnologies tech tech" :"tecnologies tech-ligth tech "}>
               <h2>Front-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i class="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
-                <li><i class="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
-                <li><i class="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
-                <li><i class="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
+                <li><i className="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
+                <li><i className="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
+                <li><i className="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
+                <li><i className="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
               </ul>
               </div>
             </div>
-            <div class="tecnologies tech">
+           <div className={darkMode ?"tecnologies tech tech" :"tecnologies tech-ligth tech "}>
               <h2>Back-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i class="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
-                <li><i class="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
-                <li><i class="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
-                <li><i class="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
-                <li><i class="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
+                <li><i className="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
+                <li><i className="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
+                <li><i className="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
+                <li><i className="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
+                <li><i className="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
 
               </ul>
               </div>
             </div>
           </div>
-          <div class="tecnologies tools">
+           <div className={darkMode ? "tecnologies tech-ligth tools" :"tecnologies tools tech-ligth"}>
             <h2>Tools</h2>
             <div className="icon-grid-view">
               <ul>
-              <li><i class="icon git"></i> <img className="icon-img-tech" src={git} alt="" /></li>
-              <li><i class="icon code"></i> <img className="icon-img-tech" src={postman} alt="" /></li>
-              <li><i class="icon figma"></i> <img className="icon-img-tech" src={figma} alt="" /></li>
+              <li><i className="icon git"></i> <img className="icon-img-tech" src={git} alt="" /></li>
+              <li><i className="icon code"></i> <img className="icon-img-tech" src={postman} alt="" /></li>
+              <li><i className="icon figma"></i> <img className="icon-img-tech" src={figma} alt="" /></li>
             </ul>
             </div>
           </div>
         </section>
 
-        <footer className="footer" id="dark"> 
+        <footer className="footer light-footer" id="light"> 
           <div className="footer-credits">
             <p>© 2024 Jeronimo Riveros.</p>
             <p>Todos los derechos Reservados</p>

@@ -467,7 +467,7 @@
 }
 
 .project .image-project img {
-  transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+  transition: transform 0.3s ease-in-out; 
 }
 
 
@@ -576,7 +576,7 @@ width: 100%;
     border-color: #FFFFFF;
 }
   50% {
-    border-color: #00FF00; /* Cambia este color según prefieras */
+    border-color: #00FF00;  
 }
   100% {
     border-color: #72e582;
@@ -590,6 +590,11 @@ width: 100%;
 .tech {
 width: 100%; 
 max-width: 100%;
+}
+
+.tech-ligth{
+  background-color: #5C6D7A ;
+  border: 2px solid #000000;
 }
 
 .icon-img-tech {
@@ -710,29 +715,26 @@ height: 32px;
 
 
 
-/* scroll styles */
-/* Estilos para la barra de desplazamiento en navegadores basados en WebKit */
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento */
+  width: 10px; 
   }
 
   ::-webkit-scrollbar-track {
-  background: #000000; /* Color de fondo de la barra de desplazamiento */
+  background: #000000; 
   }
 
   ::-webkit-scrollbar-thumb {
-  background: var(--black); /* Color del control deslizante de la barra de desplazamiento */
-  border-radius: 10px; /* Bordes redondeados para el control deslizante */
+  background: var(--black);
+  border-radius: 10px; 
   }
 
   ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color del control deslizante al pasar el mouse */
+  background: #555; 
   }
 
-  /* Estilos para la barra de desplazamiento en Firefox */
 * {
-scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
-scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de la barra de desplazamiento */
+scrollbar-width: thin; 
+scrollbar-color: #888 var(--black); 
 }
 
 
@@ -741,6 +743,11 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   background-color: transparent;
   color: var(--black);
 }
+
+#main-navbar .navbar-features .ligthModeTraduce:hover{
+  color:var(--light-blue);
+}
+
 #main-navbar .navbar-features .ligth_Mode{
   background-color: var(--black);
   color: var(--white);
@@ -780,7 +787,11 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
 
 #aboutme-little-description-ligth{
   color: var(--dark);
+  margin: 20px 0px 50px 0px;
+  font-size: 15px;
+  text-align: center;
   opacity: 1;
+  font-weight: bold;
 }
 
 /* github fill color */
@@ -822,9 +833,17 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   margin-bottom: 30px;
   width: 80%;
 }
-
+#project-title{
+  margin: 0;
+  font-size: 30px;
+}
+#project-text{
+  font-weight: bold;
+  opacity: 1;
+  font-size: 16px;
+}
 #project-ligth{
-  background-color: var(--dark-gray-2);
+  background-color: #5C6D7A;
 }
 
 #project-ligth h2,#project-ligth p{
@@ -850,12 +869,17 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   animation: ligth-border 1s infinite;
 }
 
+.light-footer {
+  color: var(--white);
+  background-color:#374757 ;
+ }
+
 @keyframes ligth-border {
   0% {
     border-color: #FFFFFF;
 }
   50% {
-    border-color: #00aaff; /* Cambia este color según prefieras */
+    border-color: #00aaff; 
 }
   100% {
     border-color: #4d62ff;
@@ -866,7 +890,6 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   .tecnologies-icons{
     gap: 10px;
     width: auto;
-    /* margin top segun aumenta gradualmente si el width de la pantalla disminuye utiliza calc()*/
     margin-top:10%;
   }
 }
@@ -885,12 +908,10 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   .tecnologies-icons{
     gap: 10px;
     width: auto;
-    /* margin top segun aumenta gradualmente si el width de la pantalla disminuye utiliza calc()*/
     margin-top:0%;
   }
 }
 
-/* Estilos base para móviles */
 @media screen and (max-width: 480px) {
 
   .portafolio-scroll{
@@ -900,6 +921,7 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
 
  .topflex-tecnologies-section{
   justify-content: center;
+  flex-direction: column;
   margin: 0px;
  }
 
@@ -911,16 +933,26 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
     --fs-size:41px;
   }
 
+.tech, .tecnologies{
+  max-width: 300px;
+}
+
  .footer{
   font-size: 10px;
  }
+
   
 }
 
-/* Estilos para tablets en modo retrato */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .presentation .button{
     --fs-size: 39px;
+  }
+  .topflex-tecnologies-section{
+    justify-content: center;
+    margin: 0px;
+    flex-direction: column;
+
   }
 }
 
@@ -928,16 +960,31 @@ scrollbar-color: #888 var(--black); /* Color del control deslizante y fondo de l
   .presentation .button{
     --fs-size: 35px;
   }
+  .topflex-tecnologies-section{
+    justify-content: center;
+    margin: 0px;
+    flex-direction: column;
+
+  }
 }
 
-/* Estilos para tablets en modo paisaje */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 .presentation .button{
   --fs-size: 41px;
 }
+.topflex-tecnologies-section{
+  justify-content: center;
+  margin: 0px;
+  flex-direction: column;
+
+}
 }
 
-/* Estilos para escritorio */
-@media screen and (min-width: 1025px) {
-/* Aquí van los estilos específicos para escritorio */
+@media screen and (min-width:800px) and (max-width: 1025px) { 
+  .topflex-tecnologies-section{
+    justify-content: center;
+    margin: 0px;
+    flex-direction: column;
+
+  }
 }
