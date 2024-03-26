@@ -31,7 +31,7 @@ const [darkMode, setDarkMode] = useState(() => {
 
 const toggleDarkMode = () => {
   setDarkMode(!darkMode);
-  {darkMode ? document.body.style.backgroundColor ='white' : document.body.style.backgroundColor ='#1a1a1a'}
+  {darkMode ? document.body.style.backgroundColor ='#f9fafb' : document.body.style.backgroundColor ='#1a1a1a'}
 };
 
 const toggleLanguage = () => {
