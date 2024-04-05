@@ -79,9 +79,14 @@
   transition: all 0.2s ease-in-out;
 }
 .traduce-icon:hover{
-  color: var(--light-blue);
+  stroke: var(--light-blue);
   transform: scale(1.2);
 }
+
+.traduce-icon:hover path{
+  stroke: var(--light-blue);
+}
+
 .sun-theme-icon{
   width: 20px;
   height: auto;
