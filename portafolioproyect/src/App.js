@@ -71,7 +71,7 @@ return (
                 },
                 onHover: {
                   enable: true,
-                  mode: "repulse",
+                  mode: darkMode ? "repulse" : "attract",
                 },
               },
               modes: {
@@ -81,15 +81,19 @@ return (
                 repulse: {
                   distance: 100,
                   duration: 1,
-                },
+                 },
+                 attract: { // Configuración de atracción
+                  distance: 500,
+                  duration: 0.5,
+                 },
               },
             },
             particles: {
               color: {
-                value: darkMode ? "#ffffff" : "#",
+                value: darkMode ? "#ffffff" : "#000000",
               },
               links: {
-                color: darkMode ? "#ffffff" : "#000000",
+                color: darkMode ? "#ffffff" : "#",
                 distance: 150,
                 enable: true,
                 opacity: 0.5,

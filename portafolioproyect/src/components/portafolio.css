@@ -314,7 +314,7 @@
 
 .github:hover {
   fill: #4bcffa;
-  filter: drop-shadow(0 0 20px #575fcf);
+  filter: drop-shadow(0 0 30px #575fcf);
 }
 
 .email-svg:hover{
@@ -872,7 +872,7 @@ scrollbar-color: #888 var(--black);
   transition: all 0.5s ease-in-out;
 }
 
-.contact-icon:hover{
+footer .contact-icon:hover{
   transform: scale(1.2);
   filter: drop-shadow(0 0 10px #ffffff);
 }
