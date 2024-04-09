@@ -162,6 +162,10 @@
   height: auto;
 }
 
+.effect {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
 
 .presentation {
   display: flex;
@@ -183,7 +187,7 @@
 
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #37FF8B;
+  --animation-color: #0fbcf9;
   --fs-size: 50px;
   letter-spacing: 3px;
   text-decoration: none;
@@ -195,24 +199,8 @@
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
-.effect {
-  animation: fadeIn 2s ease-in-out;
-}
-
 .actual-text{
   padding: 10px;
-}
-
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hover-text {
@@ -242,7 +230,8 @@
   text-overflow: none;
   width: 100%; 
   filter: drop-shadow(0 0 23px var(--animation-color));
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px;
 }
 
 .presentation .aboutme-icons svg{
@@ -275,14 +264,6 @@
   fill: #f9fafb;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
 .email-icon {
   display: flex;
@@ -332,22 +313,40 @@
 }
 
 .github:hover {
-  filter:drop-shadow(0 0px 15px var(--white));
-  fill: var(--light-blue);
-  cursor: pointer;
+  fill: #4bcffa;
+  filter: drop-shadow(0 0 20px #575fcf);
 }
 
 .email-svg:hover{
-  transform: scale(1.2);
-  filter:drop-shadow(0 5px 15px var(--white));
-  fill: var(--light-blue);
-  cursor: pointer;
-
+  fill: #4bcffa;
+  filter: drop-shadow(0 0 20px #575fcf);
 }
 .linkedin:hover{  
-  fill: #0b6ab2;
-  transform: scale(1.2);
-  filter: drop-shadow(0 5px 15px var(--white));
+  fill: #4bcffa;
+  filter: drop-shadow(0 0 20px #575fcf);
+}
+
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .aboutme-little-description
@@ -403,12 +402,14 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  overflow: hidden;
   transition-duration: 300ms;
   transition-property: transform, box-shadow;
   transition-timing-function: ease-out;
   transform: rotate3d(0);
   height: 100%;
 }
+
 
 
 .header-project {
@@ -437,6 +438,11 @@
   position: relative;
   top: 0px;
   opacity: 0.8;
+  transition: all 0.5s ease-in-out;
+}
+
+#span:hover{
+  opacity: 1;
 }
 
 .header-project a{
@@ -447,14 +453,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease-in-out;
 }
 
+.link_icon svg:hover > path{
+  stroke: var(--light-blue) !important;
+  opacity: 1;
+}
 .header-project a:hover{
   color: var(--white);
   fill: var(--white);
   opacity: 1;
   transform: scale(1.2);
 }
+
 
 .project-details {
   margin-top: 10px;
@@ -495,7 +507,7 @@
 
 .project:hover{
     transition-duration: 150ms;
-    box-shadow: -10px  10px 25px 5px #000000;
+    box-shadow: -10px  10px 25px 5px #000000;     
 }
 
 @keyframes project-hover {
@@ -531,6 +543,12 @@ span .icon_tech {
   margin-top: 5px;
 }
 
+.tecnologies-icons img:hover{
+  transform: scale(1.25);
+  opacity: 1;
+  margin: 0 5px;
+}
+
 .tecnologies-header{
   z-index: 1;
 }
@@ -547,6 +565,13 @@ span .icon_tech {
   max-width: 725px;
   min-width: 460px;
   z-index: 1;
+}
+
+.tecnologies-section img:hover{
+  transform: scale(1.25);
+  opacity: 1;
+  margin: 0 5px;
+
 }
 
 .tecnologies-section ul {
@@ -767,15 +792,21 @@ scrollbar-color: #888 var(--black);
   background-color: var(--black);
   color: var(--white);
 }
+
 .moon-theme-icon{
   transition: all 0.2s ease-in-out;
+  border-radius: 20px;
 }
 
 
 
 .moon-theme-icon:hover{
-  color: #383634;
   transform: rotate(180deg) scale(1.2);
+  filter: drop-shadow(0 0 10px #222f3e);
+}
+
+.moon-theme-icon:hover path{
+  fill: #c8d6e5;
 }
 
 
@@ -788,7 +819,7 @@ scrollbar-color: #888 var(--black);
   cursor: pointer;
   --border-right: 6px;
   --text-stroke-color: var(--dark);
-  --animation-color: var(--dark-red);
+  --animation-color: #3c40c6;
   --fs-size: 50px;
   letter-spacing: 3px;
   text-decoration: none;
@@ -814,6 +845,13 @@ scrollbar-color: #888 var(--black);
   fill: #000000;
 }
 
+.github_ligth:hover,
+.linkedin-ligth:hover,
+.email-svg-ligth:hover{
+  fill: #5f27cd;
+  filter: drop-shadow(0 0 20px #10ac84);
+}
+
 /* linkedin fill color branch */
 .linkedin-ligth{
   fill: #000000;
@@ -829,6 +867,16 @@ scrollbar-color: #888 var(--black);
   fill: #000000;
 }
 
+.contact-icon{
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.contact-icon:hover{
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+
 .projects-header-ligth{
   width: 100%;
     display: flex;
@@ -838,6 +886,18 @@ scrollbar-color: #888 var(--black);
     gap: 10px;
     z-index: 1;
     color: var(--dark);
+}
+
+#spanligth{
+  color: white;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.project-type #spanligth:hover{
+  color: white;
+  opacity: 1;
+  font-size: large;
 }
 
 .projects-section-ligth{
@@ -860,6 +920,23 @@ scrollbar-color: #888 var(--black);
 #project-ligth{
   background-color: #5C6D7A;
 }
+
+#project-ligth .project-links path{
+  stroke: var(--white);
+  opacity: 1  ;
+}
+
+#project-ligth .github-project{
+  fill: var(--white);
+}
+
+#project-ligth .github-project:hover,
+#project-ligth .github-project:hover path
+{
+  fill: var(--dark);
+  stroke: var(--dark);
+  opacity: 1;
+} 
 
 #project-ligth h2,#project-ligth p{
   color: var(--black);

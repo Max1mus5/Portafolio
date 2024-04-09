@@ -176,8 +176,8 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
                 </g>
                 </svg>
               </a>
-              <a href="https://mastervault.vercel.app/" title="MasterVault Demo"><span target="_blanck" className="link_icon">
-              <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a  target="_blank" href="https://mastervault.vercel.app/" title="MasterVault Demo"><span  className="link_icon">
+              <svg  width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
                 </span></a>
@@ -254,10 +254,10 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
               <h2>Front-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i className="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
-                <li><i className="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
-                <li><i className="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
-                <li><i className="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
+                <li><i className="icon html5"></i> <img title="html 5" className="icon-img-tech" src={html5} alt="html 5" /></li>
+                <li><i className="icon css3t"></i> <img title="css 3" className="icon-img-tech" src={css3} alt="css 3" /></li>
+                <li><i className="icon javascript"></i> <img title="Java Script" className="icon-img-tech" src={js} alt="Java Script" /></li>
+                <li><i className="icon react"></i> <img title="React" className="icon-img-tech" src={react_icon} alt="React" /></li>
               </ul>
               </div>
             </div>
@@ -265,12 +265,11 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
               <h2>Back-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i className="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
-                <li><i className="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
-                <li><i className="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
-                <li><i className="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
-                <li><i className="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
-
+                <li><i className="icon node-js"></i> <img title="Node Js" className="icon-img-tech" src={node} alt="Node Js" /></li>
+                <li><i className="icon database"></i> <img title="MySQL" className="icon-img-tech" src={mysql} alt="MySQL" /></li>
+                <li><i className="icon database"></i> <img title="Mongo Db" className="icon-img-tech" src={mongodb} alt="Mongo Db" /></li>
+                <li><i className="icon django"></i> <img title="Django" className="icon-img-tech" src={dj} alt="Django" /></li>
+                <li><i className="icon django"></i> <img title="Python" className="icon-img-tech" src={python} alt="Python" /></li>
               </ul>
               </div>
             </div>
@@ -416,8 +415,8 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
           <div className="project" id="project-ligth">
             <div className="header-project">
               <div className="project-type">
-                <span id="span" className="ligth">Personal Proyect</span>  
-              </div>
+              <span id="spanligth" >Personal Proyect</span>  
+                            </div>
 
               <div className="project-links">
                 
@@ -462,8 +461,8 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
           <div className="project" id="project-ligth">
             <div className="header-project">
               <div className="project-type">
-                <span id="span" className="ligth">Personal Proyect</span>  
-              </div>
+              <span id="spanligth" >Personal Proyect</span>  
+                            </div>
 
               <div className="project-links">
                 
@@ -517,10 +516,10 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
               <h2>Front-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i className="icon html5"></i> <img className="icon-img-tech" src={html5} alt="" /></li>
-                <li><i className="icon css3t"></i> <img className="icon-img-tech" src={css3} alt="" /></li>
-                <li><i className="icon javascript"></i> <img className="icon-img-tech" src={js} alt="" /></li>
-                <li><i className="icon react"></i> <img className="icon-img-tech" src={react_icon} alt="" /></li>
+                <li><i className="icon html5"></i> <img title="html 5" className="icon-img-tech" src={html5} alt="html 5" /></li>
+                <li><i className="icon css3t"></i> <img title="css 3" className="icon-img-tech" src={css3} alt="css 3" /></li>
+                <li><i className="icon javascript"></i> <img title="Java Script" className="icon-img-tech" src={js} alt="Java Script" /></li>
+                <li><i className="icon react"></i> <img title="React" className="icon-img-tech" src={react_icon} alt="React" /></li>
               </ul>
               </div>
             </div>
@@ -528,12 +527,11 @@ const Portafolio = ({ language, darkMode, toggleDarkMode }) => {
               <h2>Back-End</h2>
               <div className="icon-grid-view">
                 <ul>
-                <li><i className="icon node-js"></i> <img className="icon-img-tech" src={node} alt="" /></li>
-                <li><i className="icon database"></i> <img className="icon-img-tech" src={mysql} alt="" /></li>
-                <li><i className="icon database"></i> <img className="icon-img-tech" src={mongodb} alt="" /></li>
-                <li><i className="icon django"></i> <img className="icon-img-tech" src={dj} alt="" /></li>
-                <li><i className="icon django"></i> <img className="icon-img-tech" src={python} alt="" /></li>
-
+                <li><i className="icon node-js"></i> <img title="Node Js" className="icon-img-tech" src={node} alt="Node Js" /></li>
+                <li><i className="icon database"></i> <img title="MySQL" className="icon-img-tech" src={mysql} alt="MySQL" /></li>
+                <li><i className="icon database"></i> <img title="Mongo Db" className="icon-img-tech" src={mongodb} alt="Mongo Db" /></li>
+                <li><i className="icon django"></i> <img title="Django" className="icon-img-tech" src={dj} alt="Django" /></li>
+                <li><i className="icon django"></i> <img title="Python" className="icon-img-tech" src={python} alt="Python" /></li>
               </ul>
               </div>
             </div>
