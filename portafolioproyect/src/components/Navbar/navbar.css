@@ -1,0 +1,155 @@
+/* Estructura principal del navbar */
+#main-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 20px;
+  width: 100%;
+  height: 72px;
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  border-radius: 0px 0px 10px 10px;
+  user-select: none;
+}
+
+/* Contenedor del logo */
+.icon-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+.logoportafolio {
+  width: 32px;
+  height: auto;
+  margin: 0;
+  border-radius: 5px;
+}
+
+/* Contenedor de características del navbar */
+#main-navbar .navbar-features {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 25%;
+  height: 40px;
+}
+
+/* Botones del navbar */
+#main-navbar .navbar-features button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  height: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Estilos del icono de traducción - Modo oscuro */
+.traduce-icon {
+  width: 20px;
+  height: auto;
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+}
+
+.traduce-icon:hover {
+  stroke: var(--light-blue);
+  transform: scale(1.2);
+}
+
+.traduce-icon:hover path {
+  stroke: var(--light-blue);
+}
+
+/* Estilos del icono de tema - Modo oscuro */
+.sun-theme-icon {
+  width: 20px;
+  height: auto;
+  color: #d69e2e;
+  transition: all 0.2s ease-in-out;
+}
+
+.sun-theme-icon:hover {
+  color: #ffaa00;
+  transform: scale(1.2);
+}
+
+/* Estilos del botón de descarga - Modo oscuro */
+#main-navbar .navbar-features a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 12px;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: 50px;
+  padding: 4%;
+  height: auto;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#main-navbar .navbar-features a:hover {
+  color: var(--black);
+  background-color: var(--light-gray);
+  transition: all 0.2s ease-in-out;
+}
+
+.icon_download {
+  width: 16px;
+  height: auto;
+  margin: 0px;
+  border-radius: 5px;
+  font-weight: none;
+}
+
+/* Estilos para modo claro */
+#main-navbar .navbar-features .ligthModeTraduce {
+  background-color: transparent;
+  color: var(--black);
+}
+
+#main-navbar .navbar-features .ligthModeTraduce:hover {
+  color: var(--light-blue);
+}
+
+#main-navbar .navbar-features .ligth_Mode {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.moon-theme-icon {
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+}
+
+.moon-theme-icon:hover {
+  transform: rotate(180deg) scale(1.2);
+  filter: drop-shadow(0 0 10px #222f3e);
+}
+
+.moon-theme-icon:hover path {
+  fill: #c8d6e5;
+}
+
+/* Media queries */
+@media screen and (max-width: 480px) {
+  #main-navbar {
+    justify-content: space-around;
+  }
+}

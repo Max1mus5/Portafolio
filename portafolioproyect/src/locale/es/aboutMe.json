@@ -1,0 +1,51 @@
+{
+  "about": {
+    "title": {
+      "name": "Jerónimo Riveros",
+      "role": "Fullstack Dev"
+    },
+    "social": {
+      "github": "Github",
+      "linkedin": "LinkedIn",
+      "email": {
+        "title": "Copiar Email",
+        "copied": "Copiado",
+        "error": "Error al copiar el email"
+      }
+    },
+    "description": {
+      "full":"Soy un desarrollador Full Stack con habilidades en tecnologías clave como JavaScript, React, Node.js, Express, MySQL, entre otras. Mi enfoque se centra en la resolución efectiva de problemas y en superar la expectativas. Me destaco por mi capacidad para colaborar en equipo y adaptarme rápidamente a nuevos entornos y tecnologías. Busco constantemente oportunidades para expandir mi conocimiento y mejorar mis habilidades técnicas. Con una actitud proactiva y un compromiso con la excelencia, estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe.",
+      "intro": "Soy un",
+      "role": " desarrollador Full Stack",
+      "withSkills": "con habilidades en tecnologías clave como",
+      "techList":"JavaScript, React, Node.js, Express, MySQL",
+      "andOthers": "entre otras.",
+      "focus": {
+        "prefix": "Mi enfoque se centra en la",
+        "skill1": "resolución efectiva de problemas",
+        "and": "y en",
+        "skill2": "superar expectativas"
+      },
+      "abilities": {
+        "prefix": "Me destaco por mi capacidad para",
+        "soft1": "colaborar en equipo",
+        "and": "y",
+        "soft2": "adaptarme rápidamente",
+        "suffix": "a nuevos entornos y tecnologías."
+      },
+      "growth": {
+        "prefix": "Busco constantemente oportunidades para",
+        "growth1": "expandir mi conocimiento",
+        "and": "y",
+        "growth2": "mejorar mis habilidades técnicas"
+      },
+      "attitude": {
+        "prefix": "Con una",
+        "att1": "actitud proactiva",
+        "and": "y un",
+        "att2": "compromiso con la excelencia",
+        "suffix": "estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe."
+      }
+    }
+  }
+}

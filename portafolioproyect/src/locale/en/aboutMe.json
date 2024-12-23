@@ -1,0 +1,51 @@
+{
+  "about": {
+    "title": {
+      "name": "Jerónimo Riveros",
+      "role": "Fullstack Developer"
+    },
+    "social": {
+      "github": "Github",
+      "linkedin": "LinkedIn",
+      "email": {
+        "title": "Copy Email",
+        "copied": "Copied",
+        "error": "Error copying email"
+      }
+    },
+    "description": {
+      "full":"I am a Full Stack developer with skills in key technologies such as JavaScript, React, Node.js, Express, MySQL, among others. My focus is on effective problem solving and exceeding expectations. I excel in my ability to collaborate in a team and adapt quickly to new environments and technologies. I constantly seek opportunities to expand my knowledge and improve my technical skills. With a proactive attitude and a commitment to excellence, I am prepared to face challenges and contribute to the success of any project I am involved in.",
+      "intro": "I am a",
+      "role": " Full Stack developer",
+      "withSkills": "with expertise in key technologies such as",
+      "techList": "JavaScript, React, Node.js, Express, MySQL",
+      "andOthers": "among others.",
+      "focus": {
+        "prefix": "My focus is on",
+        "skill1": "effective problem-solving",
+        "and": "and",
+        "skill2": "exceeding expectations"
+      },
+      "abilities": {
+        "prefix": "I excel at",
+        "soft1": "team collaboration",
+        "and": "and",
+        "soft2": "quickly adapting",
+        "suffix": "to new environments and technologies."
+      },
+      "growth": {
+        "prefix": "I constantly seek opportunities to",
+        "growth1": "expand my knowledge",
+        "and": "and",
+        "growth2": "enhance my technical skills"
+      },
+      "attitude": {
+        "prefix": "With a",
+        "att1": "proactive attitude",
+        "and": "and a",
+        "att2": "commitment to excellence",
+        "suffix": "I am prepared to face challenges and contribute to the success of any project I participate in."
+      }
+    }
+  }
+}

@@ -1,0 +1,346 @@
+/* Sección principal y contenedores */
+.aboutme-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 20px;
+  width: 80%;
+  margin: 100px auto;
+}
+
+.aboutme-grid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+
+/* Presentación */
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 30px;
+  aspect-ratio: 16/4;
+}
+
+/* Botón de presentación */
+.presentation .button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #0fbcf9;
+  --fs-size: 50px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* Textos del botón */
+.actual-text {
+  padding: 10px;
+}
+
+.hover-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.presentation .button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px;
+}
+
+/* Iconos sociales */
+.presentation .aboutme-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0px;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.presentation .aboutme-icons svg {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border-radius: 50%;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  animation: float 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* Estilos de iconos específicos */
+.github { fill: #f9fafb; }
+.github_ligth { fill: #000000; }
+.linkedin { fill: #f9fafb; }
+.linkedin-ligth { fill: #000000; }
+.email-svg { fill: #f9fafb; }
+.email-svg-ligth { fill: #000000; }
+
+/* Efectos hover de iconos */
+.github:hover,
+.linkedin:hover,
+.email-svg:hover {
+  fill: #4bcffa;
+  filter: drop-shadow(0 0 30px #575fcf);
+}
+
+.github_ligth:hover,
+.linkedin-ligth:hover,
+.email-svg-ligth:hover {
+  fill: #5f27cd;
+  filter: drop-shadow(0 0 20px #10ac84);
+}
+
+/* Email container */
+.email-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-icon .email {
+  background: none;
+  border: none;
+}
+
+/* Textos de copiado */
+.copied {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.copied-light {
+  color: var(--black);
+  font-weight: bold;
+  font-size: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+/* Description container */
+.aboutme-little-description {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  cursor: pointer; /* Optional: indicates interactivity */
+}
+
+.aboutme-little-description p {
+  position: relative;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+  text-align: center;
+}
+
+.aboutme-little-description .default-description {
+  text-align: left;
+  transition: all 0.4s ease-in-out;
+}
+
+.aboutme-little-description .highlight-description {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+}
+
+.aboutme-little-description .highlight-description span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 
+    opacity 0.5s ease-out, 
+    transform 0.5s ease-out;
+}
+
+.aboutme-little-description:hover .default-description {
+  opacity: 0;
+}
+
+.aboutme-little-description:hover .highlight-description {
+  opacity: 1;
+  pointer-events: auto;
+  /* backdrop-filter: blur(15px); */
+}
+
+.aboutme-little-description:hover .highlight-description span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for spans */
+.aboutme-little-description:hover .highlight-description span:nth-child(1) { transition-delay: 0.1s; }
+.aboutme-little-description:hover .highlight-description span:nth-child(2) { transition-delay: 0.15s; }
+.aboutme-little-description:hover .highlight-description span:nth-child(3) { transition-delay: 0.2s; }
+.aboutme-little-description:hover .highlight-description span:nth-child(4) { transition-delay: 0.25s; }
+.aboutme-little-description:hover .highlight-description span:nth-child(5) { transition-delay: 0.3s; }
+.aboutme-little-description:hover .highlight-description span:nth-child(6) { transition-delay: 0.35s; }
+/* Estilos del párrafo - Modo Oscuro */
+#aboutme-little-description-content {
+  margin: 20px 0px 50px 0px;
+  font-size: 15px;
+  text-align: left;
+  opacity: 1;
+  color: var(--white);
+}
+
+#aboutme-little-description-content .highlight-role {
+  color: #0fbcf9;
+  font-weight: bold;
+}
+
+#aboutme-little-description-content .highlight-tech {
+  color: #72e582;
+  font-weight: 500;
+}
+
+#aboutme-little-description-content .highlight-skill {
+  color: #00aeff;
+  font-weight: 500;
+}
+
+#aboutme-little-description-content .highlight-soft {
+  color: #fb7185;
+  font-weight: 500;
+}
+
+#aboutme-little-description-content .highlight-growth {
+  color: #fbbf24;
+  font-weight: 500;
+}
+
+#aboutme-little-description-content .highlight-attitude {
+  color: #81f889;
+  font-weight: 500;
+}
+
+/* Estilos del párrafo - Modo Claro */
+#aboutme-little-description-ligth {
+  color: var(--dark);
+  margin: 20px 0px 50px 0px;
+  font-size: 15px;
+  text-align: center;
+  opacity: 1;
+  font-weight: bold;
+}
+
+#aboutme-little-description-ligth .highlight-role {
+  color: #0b6ab2;
+  font-weight: bold;
+}
+
+#aboutme-little-description-ligth .highlight-tech {
+  color: #059669;
+  font-weight: 500;
+}
+
+#aboutme-little-description-ligth .highlight-skill {
+  color: #0284c7;
+  font-weight: 500;
+}
+
+#aboutme-little-description-ligth .highlight-soft {
+  color: #be123c;
+  font-weight: 500;
+}
+
+#aboutme-little-description-ligth .highlight-growth {
+  color: #b45309;
+  font-weight: 500;
+}
+
+#aboutme-little-description-ligth .highlight-attitude {
+  color: #4338ca;
+  font-weight: 500;
+}
+
+/* Efectos y animaciones */
+.effect {
+  animation: fadeIn 0.35s ease-in-out ;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modo claro del botón de presentación */
+.presentation .ligthModePresentation {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-right: 6px;
+  --text-stroke-color: var(--dark);
+  --animation-color: #3c40c6;
+  --fs-size: 50px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
