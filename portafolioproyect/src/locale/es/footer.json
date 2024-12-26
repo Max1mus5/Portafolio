@@ -1,0 +1,14 @@
+{
+  "footer": {
+    "locale": "en-US",
+    "copyright": "© {{year}} Jeronimo Riveros",
+    "rights": "All rights reserved",
+    "madeWith": "Made with React",
+    "email": {
+      "copyTitle": "Copy Email",
+      "ariaLabel": "Copy email address",
+      "copied": "Copied"
+    },
+    "lastUpdate": "Last Update: December 25 2024"
+  }
+}

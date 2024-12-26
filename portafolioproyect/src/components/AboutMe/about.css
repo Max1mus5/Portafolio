@@ -1,4 +1,4 @@
-/* Sección principal y contenedores */
+/* Main section and container layouts */
 .aboutme-section {
   display: flex;
   flex-direction: column;
@@ -19,18 +19,18 @@
   height: auto;
 }
 
-/* Presentación */
+/* Presentation section */
 .presentation {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: auto;
-  gap: 30px;
+  gap: 70px;
   aspect-ratio: 16/4;
 }
 
-/* Botón de presentación */
+/* Button styles - Dark Mode */
 .presentation .button {
   margin: 0;
   height: auto;
@@ -41,7 +41,7 @@
   --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color: #0fbcf9;
-  --fs-size: 50px;
+  --fs-size: clamp(30px, 5vw, 50px);
   letter-spacing: 3px;
   text-decoration: none;
   font-size: var(--fs-size);
@@ -52,7 +52,7 @@
   -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
-/* Textos del botón */
+/* Button text and hover effects */
 .actual-text {
   padding: 10px;
 }
@@ -69,21 +69,25 @@
   width: 0%;
   inset: 0;
   border-right: var(--border-right) solid var(--animation-color);
-  text-overflow: clip;
-  overflow: hidden;
-  white-space: nowrap;
+  text-overflow: clip; 
+  overflow: hidden; 
+  white-space: nowrap; 
   transition: 0.5s;
   -webkit-text-stroke: 1px var(--animation-color);
 }
 
 .presentation .button:hover .hover-text {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-overflow: none;
+  width: 110%; 
   filter: drop-shadow(0 0 23px var(--animation-color));
   backdrop-filter: blur(10px) !important;
   border-radius: 20px;
 }
-
-/* Iconos sociales */
+/* Social icons container */
 .presentation .aboutme-icons {
   display: flex;
   flex-direction: row;
@@ -106,7 +110,28 @@
   cursor: pointer;
 }
 
-/* Estilos de iconos específicos */
+/* linkedin fill color branch */
+.linkedin{
+  fill: #f9fafb;
+}
+.linkedin-background{
+  fill: transparent;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+
+/* linkedin fill color branch */
+.linkedin-ligth{
+  fill: #000000;
+}
+.linkedin-background-ligth{
+  fill: transparent;
+  border-radius: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Social icons - Dark and Light modes */
 .github { fill: #f9fafb; }
 .github_ligth { fill: #000000; }
 .linkedin { fill: #f9fafb; }
@@ -114,7 +139,7 @@
 .email-svg { fill: #f9fafb; }
 .email-svg-ligth { fill: #000000; }
 
-/* Efectos hover de iconos */
+/* Social icons hover effects */
 .github:hover,
 .linkedin:hover,
 .email-svg:hover {
@@ -129,7 +154,7 @@
   filter: drop-shadow(0 0 20px #10ac84);
 }
 
-/* Email container */
+/* Email icon styling */
 .email-icon {
   display: flex;
   flex-direction: column;
@@ -141,7 +166,7 @@
   border: none;
 }
 
-/* Textos de copiado */
+/* Copy text styling */
 .copied {
   color: var(--white);
   font-weight: bold;
@@ -155,6 +180,7 @@
   font-size: 10px;
   animation: float 3s ease-in-out infinite;
 }
+
 /* Description container */
 .aboutme-little-description {
   display: flex;
@@ -163,38 +189,50 @@
   height: auto;
   position: relative;
   z-index: 1;
-  cursor: pointer; /* Optional: indicates interactivity */
+  cursor: pointer;
 }
 
 .aboutme-little-description p {
+  align-items: center;
   position: relative;
   transition: opacity 0.4s ease-in-out;
   opacity: 1;
-  text-align: center;
+  font-weight: bold !important;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 20px 0px 50px 0px;
+  text-align: left;
 }
 
 .aboutme-little-description .default-description {
   text-align: left;
   transition: all 0.4s ease-in-out;
+  font-weight: bold;
 }
 
+/* Description segments spacing */
+.description-segment {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.description-segment:last-child {
+  margin-bottom: 0;
+}
+
+/* Description hover effects */
 .aboutme-little-description .highlight-description {
   position: absolute;
-  top: -20px;
   left: 0;
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  text-align: center;
-}
-
-.aboutme-little-description .highlight-description span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 
-    opacity 0.5s ease-out, 
-    transform 0.5s ease-out;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease-in-out;
 }
 
 .aboutme-little-description:hover .default-description {
@@ -204,7 +242,15 @@
 .aboutme-little-description:hover .highlight-description {
   opacity: 1;
   pointer-events: auto;
-  /* backdrop-filter: blur(15px); */
+  transform: translateY(0);
+}
+
+/* Description animations */
+.aboutme-little-description .highlight-description span {
+  display: inline;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .aboutme-little-description:hover .highlight-description span {
@@ -212,62 +258,112 @@
   transform: translateY(0);
 }
 
-/* Staggered animation for spans */
+.animated-span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out,
+    color 0.3s ease-in-out;
+}
+
+/* Staggered animation timing */
 .aboutme-little-description:hover .highlight-description span:nth-child(1) { transition-delay: 0.1s; }
 .aboutme-little-description:hover .highlight-description span:nth-child(2) { transition-delay: 0.15s; }
 .aboutme-little-description:hover .highlight-description span:nth-child(3) { transition-delay: 0.2s; }
 .aboutme-little-description:hover .highlight-description span:nth-child(4) { transition-delay: 0.25s; }
 .aboutme-little-description:hover .highlight-description span:nth-child(5) { transition-delay: 0.3s; }
 .aboutme-little-description:hover .highlight-description span:nth-child(6) { transition-delay: 0.35s; }
-/* Estilos del párrafo - Modo Oscuro */
+
+/* Dark mode description styles */
+.aboutme-little-description-dark {
+  background-color:transparent;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+p.aboutme-little-description-dark{
+  z-index: 1;
+}
+
 #aboutme-little-description-content {
   margin: 20px 0px 50px 0px;
   font-size: 15px;
   text-align: left;
   opacity: 1;
   color: var(--white);
+  line-height: 1.6;
+  font-weight: 400;
 }
 
+/* Dark mode highlights */
 #aboutme-little-description-content .highlight-role {
   color: #0fbcf9;
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(15, 188, 249, 0.3);
 }
 
 #aboutme-little-description-content .highlight-tech {
   color: #72e582;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(114, 229, 130, 0.3);
 }
 
 #aboutme-little-description-content .highlight-skill {
   color: #00aeff;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(0, 174, 255, 0.3);
 }
 
 #aboutme-little-description-content .highlight-soft {
   color: #fb7185;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(251, 113, 133, 0.3);
 }
 
 #aboutme-little-description-content .highlight-growth {
   color: #fbbf24;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
 }
 
 #aboutme-little-description-content .highlight-attitude {
   color: #81f889;
   font-weight: 500;
+  text-shadow: 0 0 10px rgba(129, 248, 137, 0.3);
 }
 
-/* Estilos del párrafo - Modo Claro */
+/* Light mode description styles */
 #aboutme-little-description-ligth {
+  top: 0px;
   color: var(--dark);
   margin: 20px 0px 50px 0px;
   font-size: 15px;
-  text-align: center;
+  text-align: left;
   opacity: 1;
-  font-weight: bold;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
 }
 
+p.aboutme-little-description-ligth {
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  color: black;
+  font-weight: 500;
+  font-size: 15px;
+  z-index: 1;
+}
+
+/* Light mode highlights */
 #aboutme-little-description-ligth .highlight-role {
   color: #0b6ab2;
   font-weight: bold;
@@ -298,9 +394,9 @@
   font-weight: 500;
 }
 
-/* Efectos y animaciones */
+/* Animations and effects */
 .effect {
-  animation: fadeIn 0.35s ease-in-out ;
+  animation: fadeIn 0.35s ease-in-out;
 }
 
 @keyframes float {
@@ -323,7 +419,7 @@
   }
 }
 
-/* Modo claro del botón de presentación */
+/* Light mode button styles */
 .presentation .ligthModePresentation {
   margin: 0;
   height: auto;
@@ -343,4 +439,75 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* Highlight hover effects */
+.highlight-role,
+.highlight-tech,
+.highlight-skill,
+.highlight-soft,
+.highlight-growth,
+.highlight-attitude {
+  display: inline-block;
+  padding: 0 2px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.highlight-role:hover,
+.highlight-tech:hover,
+.highlight-skill:hover,
+.highlight-soft:hover,
+.highlight-growth:hover,
+.highlight-attitude:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 480px) {
+  .presentation .button {
+    --fs-size: 32px; /* Fixed smaller size for mobile */
+    letter-spacing: 2px;
+    width: 100%;
+  }
+
+  .actual-text,
+  .hover-text {
+    padding: 8px;
+    font-size: var(--fs-size);
+    width: 100%;
+  }
+
+  /* Ensure text stays centered on mobile */
+  .hover-text {
+    width: 0%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .presentation .button:hover .hover-text {
+    width: 110%;
+    padding: 8px;
+  }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .presentation .button {
+    --fs-size: 39px;
+    width: 100%;
+  }
+  
+  .actual-text,
+  .hover-text {
+    padding: 10px;
+  }
+}
+
+/* Small desktop adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .presentation .button {
+    --fs-size: 45px;
+  }
 }

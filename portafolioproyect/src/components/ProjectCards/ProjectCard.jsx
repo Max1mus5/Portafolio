@@ -1,40 +1,11 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 import react_icon from '../../assets/react-icon.svg';
 import python from '../../assets/python-icon.svg';
 import css3 from '../../assets/css3-icon.svg';
 import './project.css';
 
-const projects = [
-  {
-    id: 1,
-    type: 'Personal Proyect',
-    title: 'MasterVault',
-    description: 'Administrador y Generador de contraseñas',
-    githubLink: 'https://github.com/Max1mus5/MasterVault',
-    demoLink: 'https://mastervault.vercel.app/',
-    technologies: [
-      { icon: react_icon, alt: 'react_icon' },
-      { icon: python, alt: 'python' },
-      { icon: css3, alt: 'css3' }
-    ],
-    imageUrl: 'https://raw.githubusercontent.com/Max1mus5/MasterVault/master/react_password_components/src/img/MasterVault_Slogan.png',
-    altText: 'masterVault'
-  },
-  {
-    id: 2,
-    type: 'Personal Proyect',
-    title: 'Clim-J',
-    description: 'Una aplicación simple para consultar el pronóstico del tiempo en tiempo real',
-    githubLink: 'https://github.com/Max1mus5/weather-app',
-    demoLink: 'https://climj.vercel.app/',
-    technologies: [
-      { icon: react_icon, alt: 'react_icon' },
-      { icon: css3, alt: 'css3' }
-    ],
-    imageUrl: 'https://github.com/Max1mus5/weather-app/assets/75461653/6cbdb56f-3d2a-487e-9ecf-6437b930087b',
-    altText: 'ClimJ'
-  }
-];
-
+// SVG Components for better organization and reusability
 const GithubIcon = () => (
   <svg className="github-project" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <title>Github</title>
@@ -51,58 +22,149 @@ const GithubIcon = () => (
 
 const LinkIcon = () => (
   <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path 
+      d="M14 7H16C18.7614 7 21 9.23858 21 12C21 14.7614 18.7614 17 16 17H14M10 7H8C5.23858 7 3 9.23858 3 12C3 14.7614 5.23858 17 8 17H10M8 12H16" 
+      stroke="#000000" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
-// ProjectCard Component
+// Project data structure with translations
+const createProjectsData = (t) => [
+  {
+    id: 1,
+    type: t('projects.personal'),
+    title: 'MasterVault',
+    description: t('projects.mastervault.description'),
+    githubLink: 'https://github.com/Max1mus5/MasterVault',
+    demoLink: 'https://mastervault.vercel.app/',
+    technologies: [
+      { icon: react_icon, alt: 'react_icon' },
+      { icon: python, alt: 'python' },
+      { icon: css3, alt: 'css3' }
+    ],
+    imageUrl: 'https://raw.githubusercontent.com/Max1mus5/MasterVault/master/react_password_components/src/img/MasterVault_Slogan.png',
+    altText: 'masterVault'
+  },
+  {
+    id: 2,
+    type: t('projects.personal'),
+    title: 'Clim-J',
+    description: t('projects.climj.description'),
+    githubLink: 'https://github.com/Max1mus5/weather-app',
+    demoLink: 'https://climj.vercel.app/',
+    technologies: [
+      { icon: react_icon, alt: 'react_icon' },
+      { icon: css3, alt: 'css3' }
+    ],
+    imageUrl: 'https://github.com/Max1mus5/weather-app/assets/75461653/6cbdb56f-3d2a-487e-9ecf-6437b930087b',
+    altText: 'ClimJ'
+  }
+];
+
 const ProjectCard = ({ project, darkMode = false }) => {
   return (
-    <div className={`project ${darkMode ? '' : 'id="project-ligth"'}`}>
+    // Main project container with theme-based styling
+    <div className={`project ${darkMode ? 'dark' : 'light'}`}>
+      {/* Project header section */}
       <div className="header-project">
+        {/* Project type indicator */}
         <div className="project-type">
-          <span id={darkMode ? 'span' : 'spanligth'}>{project.type}</span>  
+          <span className={`project-type-label ${darkMode ? 'dark' : 'light'}`}>
+            {project.type}
+          </span>  
         </div>
 
+        {/* Project links section */}
         <div className="project-links">
-          <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+          {/* GitHub repository link */}
+          <a 
+            href={project.githubLink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="project-link"
+            title="View Source Code"
+          >
             <GithubIcon />
           </a>
-          <a href={project.demoLink} target="_blank" rel="noopener noreferrer" title={`${project.title} Demo`}>
+          {/* Live demo link */}
+          <a 
+            href={project.demoLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            title={`${project.title} Demo`}
+            className="project-link"
+          >
             <span className="link_icon">
               <LinkIcon />
             </span>
           </a>
         </div>
       </div>
+
+      {/* Project details section */}
       <div className="project-details">
-        <h2 className="title">{project.title}</h2>
-        <p>{project.description}</p>
-        <div className={`tecnologies-icons ${darkMode ? '' : 'id="tecnologies-ligth"'}`}>
+        {/* Project title with animation */}
+        <h2 className="title animated-element">{project.title}</h2>
+        
+        {/* Project description with animation */}
+        <p className="project-description animated-element">
+          {project.description}
+        </p>
+
+        {/* Technologies used section */}
+        <div className={`technologies-icons ${darkMode ? 'dark' : 'light'}`}>
           {project.technologies.map((tech, index) => (
-            <span key={index} className={`icon_tech ${project.title === 'Clim-J' ? 'climj' : ''}`}>
-              <img src={tech.icon} alt={tech.alt} />
+            <span 
+              key={index} 
+              className={`icon_tech animated-element ${
+                project.title === 'Clim-J' ? 'climj' : ''
+              }`}
+            >
+              <img 
+                src={tech.icon} 
+                alt={tech.alt} 
+                title={tech.alt} // Added tooltip for better accessibility
+              />
             </span>
           ))}
         </div>
-        <div className="image-project">
-          <img className="img" src={project.imageUrl} alt={project.altText} />
+
+        {/* Project image section */}
+        <div className="image-project animated-element">
+          <img 
+            className="img" 
+            src={project.imageUrl} 
+            alt={project.altText}
+            loading="lazy" // Added lazy loading for better performance
+          />
         </div>  
       </div>
     </div>
   );
 };
 
-// ProjectSection Component
+// Main ProjectSection Component
 const ProjectSection = ({ darkMode = true }) => {
+  const { t } = useTranslation('projects');
+  const projects = createProjectsData(t);
+
   return (
-    <>
-      <section className={`${darkMode ? 'projects-section' : 'projects-section-ligth'}`} id="projects">
-        {projects.slice(0, 2).map(project => (
-          <ProjectCard key={project.id} project={project} darkMode={darkMode} />
-        ))}
-      </section>
-    </>
+    <section 
+      className={`projects-section ${darkMode ? 'dark' : 'light'}`} 
+      id="projects"
+    >
+      {projects.map(project => (
+        <ProjectCard 
+          key={project.id} 
+          project={project} 
+          darkMode={darkMode} 
+        />
+      ))}
+    </section>
   );
 };
 

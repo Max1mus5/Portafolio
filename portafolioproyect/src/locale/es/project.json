@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "title": "Proyectos",
+    "description": "Algunos proyectos que he desarrollado",
+    "personal": "Proyecto Personal",
+    "mastervault": {
+      "description": "Administrador y Generador de contraseñas"
+    },
+    "climj": {
+      "description": "Una aplicación simple para consultar el pronóstico del tiempo en tiempo real"
+    }
+  }
+}

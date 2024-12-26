@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Portafolio from './components/portafolio.jsx';
-import PortafolioTraduce from './components/portafolio-traduce.jsx';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useTranslation } from 'react-i18next';
 import i18n from './locale/i18n.js';
@@ -56,22 +55,13 @@ function App() {
       {/* Particles Background */}
       {init && <ParticlesBackground darkMode={darkMode} />}
 
-      {language === 'en' ? (
-        <PortafolioTraduce
-          language={toggleLanguage}
-          darkMode={darkMode}
-          toggleDarkMode={toggleDarkMode}
-          className="portafolio"
-        />
-      ) : (
         <Portafolio
           language={toggleLanguage}
           darkMode={darkMode}
           toggleDarkMode={toggleDarkMode}
           className="portafolio"
         />
-      )}
-    </div>
+            </div>
   );
 }
 

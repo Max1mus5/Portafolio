@@ -1,0 +1,236 @@
+/* Base Footer Layout */
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  height: 150px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+/* Dark Theme Styles */
+.footer.dark {
+  background-color: var(--gray);
+  color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer.dark p {
+  color: var(--white);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer.dark:hover p {
+  opacity: 1;
+}
+
+/* Light Theme Styles */
+.footer.light {
+  background-color: #374757;
+  color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.footer.light p {
+  color: var(--white);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer.light:hover p {
+  opacity: 1;
+}
+
+/* Footer Credits Section */
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100px;
+  gap: 5px;
+}
+
+.footer-credits p {
+  margin: 0;
+  font-size: 0.9rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.footer-credits p:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer Contact Section */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Footer Icons */
+.footer-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Email Icon Styles */
+.footer .email-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+.footer .email-icon .email {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer .email-svg {
+  width: 32px;
+  height: 32px;
+  fill: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+/* Dark Theme Email Styles */
+.footer.dark .email-svg {
+  fill: var(--white);
+}
+
+.footer.dark .email-svg:hover {
+  fill: #4bcffa;
+  filter: drop-shadow(0 0 20px rgba(75, 207, 250, 0.5));
+  transform: scale(1.1);
+}
+
+/* Light Theme Email Styles */
+.footer.light .email-svg {
+  fill: var(--white);
+}
+
+.footer.light .email-svg:hover {
+  fill: #72e582;
+  filter: drop-shadow(0 0 20px rgba(114, 229, 130, 0.5));
+  transform: scale(1.1);
+}
+
+/* Copy Confirmation Styles */
+.copied,
+.copied-light {
+  position: absolute;
+  top: -20px;
+  font-size: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+  animation: fadeInOut 1.5s ease;
+}
+
+.copied {
+  color: var(--white);
+}
+
+.copied-light {
+  color: #72e582;
+}
+
+/* Last Update Section */
+.updated {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.updated:hover {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced Hover Effects */
+.footer:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.footer .email-icon:hover .email-svg {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .footer-credits,
+  .footer-contact {
+    width: 100%;
+  }
+
+  .footer-credits p {
+    font-size: 0.8rem;
+  }
+
+  .updated {
+    font-size: 0.7rem;
+  }
+}
+
+/* Accessibility Improvements */
+.footer button:focus {
+  outline: 2px solid var(--light-blue);
+  outline-offset: 2px;
+}
+
+/* Glass Effect Enhancement */
+.footer {
+  background-color: rgba(55, 71, 87, 0.8);
+  backdrop-filter: blur(10px);
+}

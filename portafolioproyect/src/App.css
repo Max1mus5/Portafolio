@@ -1,4 +1,5 @@
 :root {
+  /* Color variables */
   --white: #f9fafb;
   --dark-gray-1: #353b41;
   --dark-gray-2: #6d767e;
@@ -10,48 +11,84 @@
   --dark-red: #990000;
   --red: #cc0000;
   --dark-gray-3: #262626;
+
+  /* Theme transitions */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body{
-  color: #f9fafb;
-  font-family: 'Roboto', sans-serif;
+/* Base styles */
+body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+  transition: var(--theme-transition);
 }
 
-
-.portafolio{
-  backdrop-filter: blur(10px);
+.App {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-  /* En tu archivo CSS */
+/* Particles container styles */
 .particles-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  opacity:0;
-  z-index: 0; 
+  z-index: 0;
+  opacity: 0;
   animation: fadeIn 3s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-#tsparticles {
-width: 100%;
-height: 100%;
-position: absolute;
-z-index: 0; 
 }
 
+#tsparticles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
+/* Portfolio container */
+.portafolio {
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 100vh;
+}
 
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+/* Theme-specific styles */
+.dark-mode {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.light-mode {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .particles-container {
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .particles-container {
+    height: 100%;
+  }
+}

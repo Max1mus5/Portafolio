@@ -1,0 +1,11 @@
+{
+  "projects": {
+    "personal": "Personal Project",
+    "mastervault": {
+      "description": "Password Manager and Password Generator"
+    },
+    "climj": {
+      "description": "A simple application to consult the weather forecast in real time"
+    }
+  }
+}

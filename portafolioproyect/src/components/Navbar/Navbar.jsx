@@ -8,7 +8,7 @@ const Navbar = ({
   darkMode, 
   toggleDarkMode 
 }) => {
-  const { t, i18n } = useTranslation('navbar');
+  const { t } = useTranslation('navbar');
   // Determinar el color del trazo basado en el modo oscuro/claro
   const strokeColor = darkMode ? "white" : "black";
   
