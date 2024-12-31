@@ -22,7 +22,7 @@ function App() {
         });
         setInit(true);
         // Add a small delay to ensure smooth transition
-        setTimeout(() => setIsLoading(true), 1000);
+        setTimeout(() => setIsLoading(false), 1000);
       } catch (error) {
         console.error('Error initializing particles:', error);
         setIsLoading(false); //don't get stuck on loading
