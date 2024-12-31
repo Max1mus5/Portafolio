@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import react_icon from '../../assets/react-icon.svg';
 import python from '../../assets/python-icon.svg';

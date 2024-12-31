@@ -1,4 +1,3 @@
-import React from 'react';
 import html5 from '../../assets/html-icon.svg';
 import css3 from '../../assets/css3-icon.svg';
 import js from '../../assets/js-icon.svg';

@@ -8,6 +8,8 @@
     },
     "climj": {
       "description": "Una aplicación simple para consultar el pronóstico del tiempo en tiempo real"
-    }
+    },
+    "loading": "Cargando..."
   }
+  
 }

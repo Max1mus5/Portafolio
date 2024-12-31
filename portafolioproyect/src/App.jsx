@@ -6,22 +6,35 @@ import { loadSlim } from '@tsparticles/slim';
 import { useTranslation } from 'react-i18next';
 import i18n from './locale/i18n.js';
 import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground.jsx';
+import Loader from './components/Loader/Loader.jsx';
 
 function App() {
   const [init, setInit] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { i18n } = useTranslation();
 
+  // Initialize particles engine
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    const initEngine = async () => {
+      try {
+        await initParticlesEngine(async (engine) => {
+          await loadSlim(engine);
+        });
+        setInit(true);
+        // Add a small delay to ensure smooth transition
+        setTimeout(() => setIsLoading(true), 1000);
+      } catch (error) {
+        console.error('Error initializing particles:', error);
+        setIsLoading(false); //don't get stuck on loading
+      }
+    };
+
+    initEngine();
   }, []);
 
   const [language, setLanguage] = useState(() => {
     const savedLanguage = window.localStorage.getItem('language');
-    return savedLanguage || 'es'; // Default to Spanish
+    return savedLanguage || 'es';
   });
 
   const [darkMode, setDarkMode] = useState(() => {
@@ -45,23 +58,24 @@ function App() {
     window.localStorage.setItem('theme', darkMode ? 'light' : 'dark');
   }, [darkMode]);
 
-  // Set initial language
   useEffect(() => {
     i18n.changeLanguage(language);
   }, []);
 
+  if (isLoading) {
+    return <Loader darkMode={darkMode} />;
+  }
+
   return (
     <div className="App">
-      {/* Particles Background */}
       {init && <ParticlesBackground darkMode={darkMode} />}
-
-        <Portafolio
-          language={toggleLanguage}
-          darkMode={darkMode}
-          toggleDarkMode={toggleDarkMode}
-          className="portafolio"
-        />
-            </div>
+      <Portafolio
+        language={toggleLanguage}
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+        className="portafolio"
+      />
+    </div>
   );
 }
 

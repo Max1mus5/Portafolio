@@ -6,6 +6,8 @@
     },
     "climj": {
       "description": "A simple application to consult the weather forecast in real time"
-    }
+    },
+     "loading": "Loading..."
   }
+ 
 }

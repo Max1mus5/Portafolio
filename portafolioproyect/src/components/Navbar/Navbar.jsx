@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from "../../assets/logo-black.svg";
 import { useTranslation } from 'react-i18next';
 import './navbar.css';
