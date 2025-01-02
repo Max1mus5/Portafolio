@@ -1,14 +1,9 @@
-/* Main container styles */
 .fullcontent {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.3s ease;
-}
-
-h1{
-  text-align: center;
 }
 
 .portafolio-scroll {
@@ -27,29 +22,114 @@ h1{
   z-index: 1;
 }
 
-::-webkit-scrollbar {
-  width: 10px; 
-  }
-
-  ::-webkit-scrollbar-track {
-  background: #000000; 
-  }
-
-  ::-webkit-scrollbar-thumb {
-  background: var(--black);
-  border-radius: 10px; 
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-  }
-
-* {
-scrollbar-width: thin; 
-scrollbar-color: #888 var(--black); 
+h1 {
+  text-align: center;
 }
 
-/* Responsive design */
+/* Animaciones keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Configuración de animaciones para secciones */
+.about-section,
+.projects-header,
+.project-section,
+.tecnologies-header,
+.technologies-section,
+.footer-section {
+  animation: fade-in linear both;
+  animation-range: entry 20% cover 30%;
+}
+
+/* View timeline específico para cada sección */
+.about-section {
+  view-timeline-name: --about;
+  view-timeline-axis: block;
+  animation-timeline: --about;
+}
+
+.projects-header {
+  view-timeline-name: --projects;
+  view-timeline-axis: block;
+  animation-timeline: --projects;
+}
+
+.project-section {
+  view-timeline-name: --project-cards;
+  view-timeline-axis: block;
+  animation-timeline: --project-cards;
+}
+
+.tecnologies-header {
+  view-timeline-name: --tech-header;
+  view-timeline-axis: block;
+  animation-timeline: --tech-header;
+}
+
+.technologies-section {
+  view-timeline-name: --technologies;
+  view-timeline-axis: block;
+  animation-timeline: --technologies;
+}
+
+.footer-section {
+  view-timeline-name: --footer;
+  view-timeline-axis: block;
+  animation-timeline: --footer;
+}
+
+/* Estilos de scrollbar */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-hover-color);
+}
+
+/* Fallback para navegadores que no soportan scroll timeline */
+@supports not (animation-timeline: scroll()) {
+  .about-section,
+  .projects-header,
+  .project-section,
+  .tecnologies-header,
+  .technologies-section,
+  .footer-section {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Diseño responsivo */
 @media screen and (max-width: 1200px) {
   .portafolio-scroll {
     width: 90%;
@@ -80,5 +160,17 @@ scrollbar-color: #888 var(--black);
   .portafolio-scroll {
     width: 100%;
     padding: 4px 5px;
+  }
+}
+
+/* Soporte para reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-section,
+  .projects-header,
+  .project-section,
+  .tecnologies-header,
+  .technologies-section,
+  .footer-section {
+    animation: none;
   }
 }

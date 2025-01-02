@@ -12,10 +12,20 @@ import Footer from "./Footer/Footer";
 const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   const { t } = useTranslation('content');
   const [emailcopied, setEmailcopied] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!isAnimated) {
+      setIsAnimated(true);
+    }
+  }, []);
+  
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = window.localStorage.getItem('theme');
     return savedTheme ? savedTheme === 'light' : darkMode;
   });
+
+    
 
   // Sync dark mode state with props and localStorage
   useEffect(() => {
@@ -25,6 +35,27 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
     // Update body background
     document.body.style.backgroundColor = darkMode ? '#1a1a1a' : '#f9fafb';
   }, [darkMode]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !isAnimated) {
+        setIsAnimated(true);
+        setTimeout(handleScrollEnd, 500); // Espera un poco antes de eliminar el evento
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isAnimated]);
+  
+
+  const handleScrollEnd = () => {
+    window.removeEventListener('scroll', handleScrollEnd);
+    setIsAnimated(false);
+  };
 
   // Email copy handler
   const handleEmailCopy = async () => {
@@ -52,26 +83,27 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
         />
 
         {/* About Section */}
-        <AboutMe darkMode={darkMode} />
+        <AboutMe darkMode={darkMode}  className={isAnimated ? 'about-section' : ''} />
         
         {/* Projects Section */}
         <header className="projects-header">
           <h1 id="project-title">{t('content.projects')}</h1>
           <p id="project-text">{t('content.projectsDescription')}</p>
         </header>
-        <ProjectSection darkMode={darkMode} />
+        <ProjectSection darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
 
         {/* Technologies Section */}
         <header className="tecnologies-header">
           <h1 id="tecnologies-title">{t('content.technologies')}</h1>
         </header>
-        <Technologies darkMode={darkMode} />
+        <Technologies darkMode={darkMode} className={isAnimated ? 'technologies-section' : ''}/>
 
         {/* Footer */}
         <Footer 
           darkMode={darkMode}
           emailcopied={emailcopied}
           handleEmailCopy={handleEmailCopy}
+          className={isAnimated ? 'footer-section' : ''}
         />
       </section>
     </div>
