@@ -8,6 +8,7 @@ import AboutMe from "./AboutMe/AboutMe";
 import ProjectSection from "./ProjectCards/ProjectCard";
 import Technologies from "./Technologies/Technologies";
 import Footer from "./Footer/Footer";
+import Work from "./Work/WorkExpericeSection";
 
 const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   const { t } = useTranslation('content');
@@ -84,6 +85,12 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
 
         {/* About Section */}
         <AboutMe darkMode={darkMode}  className={isAnimated ? 'about-section' : ''} />
+
+        {/* Work Experience Section */}
+        <header className="work-header">
+          <h1 id="work-title">{t('content.workExperience')}</h1>  
+        </header>
+        <Work darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
         
         {/* Projects Section */}
         <header className="projects-header">
