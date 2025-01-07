@@ -9,7 +9,8 @@
       "achievements": [
         "Successful deployment of the application on AWS.",
         "Establishment of code standards and best practices in the frontend team."
-      ]
+      ],
+      "url":"https://www.wmt.cl/"
     },
     {
       "company": "MyWacc",
@@ -21,7 +22,8 @@
         "Successful refactoring of the code base, which improved maintainability and scalability.",
         "Implementation of asynchronous processes to optimize backend performance.",
         "Establishment of efficient workflows using Git for version control."
-      ]
+      ],
+      "url":"https://mywacc.com/"
     }
   ]
 }

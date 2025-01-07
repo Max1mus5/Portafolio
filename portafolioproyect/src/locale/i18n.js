@@ -6,12 +6,14 @@ import navbarEN from './en/navbar.json';
 import aboutEN from './en/aboutMe.json';
 import projectEN from './en/project.json';
 import footerEN from './en/footer.json';
+import workEN from './en/work.json';
 /* spanish */
 import contentES from './es/content.json';
 import navbarES from './es/navbar.json';
 import aboutES from './es/aboutMe.json';
 import projectES from './es/project.json';
 import footerES from './es/footer.json';
+import workES from './es/work.json';
 
 const resources = {
   en: {
@@ -19,14 +21,16 @@ const resources = {
     navbar: navbarEN,
     about: aboutEN,
     projects: projectEN,
-    footer: footerEN
+    footer: footerEN,
+    work: workEN
   },
   es: {
     content: contentES,
     navbar: navbarES,
     about: aboutES, 
     projects: projectES,
-    footer: footerES
+    footer: footerES,
+    work: workES
   }
 };
 

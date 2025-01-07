@@ -5,23 +5,25 @@
       "role": "Desarrollador Frontend",
       "period": "15/09/2024 - Presente",
       "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1732599100/Callwave/ky0ayzwfud4kryawvm4x.png",
-      "altText": "Logo de WMT",
+      "altText": "WMT Logo",
       "achievements": [
         "Despliegue exitoso de la aplicación en AWS.",
         "Establecimiento de estándares de código y mejores prácticas en el equipo de frontend."
-      ]
+      ],
+      "url":"https://www.wmt.cl/"
     },
     {
       "company": "MyWacc",
       "role": "Desarrollador Full Stack",
       "period": "05/08/2024 - Presente",
       "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
-      "altText": "Logo de MyWacc",
+      "altText": "MyWacc Logo",
       "achievements": [
         "Refactorización exitosa de la base de código, lo que mejoró la mantenibilidad y la escalabilidad.",
         "Implementación de procesos asincrónicos para optimizar el rendimiento del backend.",
         "Establecimiento de flujos de trabajo eficientes utilizando Git para el control de versiones."
-      ]
+      ],
+      "url":"https://mywacc.com/"
     }
   ]
 }
