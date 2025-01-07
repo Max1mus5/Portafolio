@@ -9,9 +9,6 @@ const WorkExperienceSection = ({ darkMode = false }) => {
 
   return (
     <section className="work-experience-section" id="work-experience">
-      <h1 className="work-experience-title">
-        {t("workExperience")} {/*  Traducimos el título */}
-      </h1>
       <div className="work-experiences">
         {workExperiences.map((workExperience, index) => (
           <div

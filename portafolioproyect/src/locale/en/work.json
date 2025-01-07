@@ -7,8 +7,10 @@
       "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1732599100/Callwave/ky0ayzwfud4kryawvm4x.png",
       "altText": "WMT Logo",
       "achievements": [
-        "Successful deployment of the application on AWS.",
-        "Establishment of code standards and best practices in the frontend team."
+        "Successful styling of landings",
+        "Establishment of code standards and best practices in the frontend team.",
+        "Implementation of new features in React.js, improving user experience.",
+        "Optimization of application performance, reducing loading times by 40%."
       ],
       "url":"https://www.wmt.cl/"
     },
@@ -19,9 +21,12 @@
       "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
       "altText": "MyWacc Logo",
       "achievements": [
-        "Successful refactoring of the code base, which improved maintainability and scalability.",
-        "Implementation of asynchronous processes to optimize backend performance.",
-        "Establishment of efficient workflows using Git for version control."
+        "Development and maintenance of backend endpoints using Django and Python.",
+        "Improvement and optimization of the frontend implemented in Vue.js.",
+        "Optimization of the Azure cloud server, achieving a 75% reduction in response times.",
+        "Implementation of internationalization for Spanish and Portuguese in the frontend.",
+        "Development and maintenance of technical documentation for the project.",
+        "Integration of Large Language Models (LLM) to improve user experience."
       ],
       "url":"https://mywacc.com/"
     }
