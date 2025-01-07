@@ -1,0 +1,27 @@
+{
+  "work": [
+    {
+      "company": "WMT (CallWave)",
+      "role": "Frontend Developer",
+      "period": "15/09/2024 - Present",
+      "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1732599100/Callwave/ky0ayzwfud4kryawvm4x.png",
+      "altText": "WMT Logo",
+      "achievements": [
+        "Successful deployment of the application on AWS.",
+        "Establishment of code standards and best practices in the frontend team."
+      ]
+    },
+    {
+      "company": "MyWacc",
+      "role": "Full Stack Developer",
+      "period": "05/08/2024 - Present",
+      "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
+      "altText": "MyWacc Logo",
+      "achievements": [
+        "Successful refactoring of the code base, which improved maintainability and scalability.",
+        "Implementation of asynchronous processes to optimize backend performance.",
+        "Establishment of efficient workflows using Git for version control."
+      ]
+    }
+  ]
+}
