@@ -21,7 +21,7 @@ const WorkExperienceSection = ({ darkMode = false }) => {
                 alt={workExperience.altText}
                 className={`image-work-experience ${
                   darkMode
-                    ? workExperience.altText === "MyWacc Logo"
+                    ? workExperience.altText === "MyWacc Logo" || workExperience.altText === "GISOSA Logo"
                       ? "image-light"
                       : ""
                     : workExperience.altText === "WMT Logo"

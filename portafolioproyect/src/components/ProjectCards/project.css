@@ -2,7 +2,7 @@
 .projects-section {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 2fr));
-  gap: 20px;
+  gap: 40px;
   padding: 20px;
   margin-bottom: 30px;
   width: 80%;
@@ -164,7 +164,8 @@
 
 .project-details p {
   margin: 0;
-  max-height: 20px;
+  height: auto;
+  min-height: 60px;
   font-style: italic;
 }
 
@@ -172,7 +173,7 @@
 .technologies-icons {
   gap: 20px;
   width: auto;
-  margin-top: 5px;
+  margin-top: 25px;
   display: flex;
   align-items: center;
 }
