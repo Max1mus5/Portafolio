@@ -26,6 +26,21 @@ h1 {
   text-align: center;
 }
 
+/* Estilos para títulos de secciones con buen contraste */
+.fullcontent:not(.back) h1 {
+  color: #ffffff;
+}
+
+.fullcontent.back h1 {
+  color: #000000;
+}
+
+/* Estilos específicos para títulos de secciones */
+#work-title, #project-title, #tecnologies-title {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
 /* Animaciones keyframes */
 @keyframes fade-in {
   from {

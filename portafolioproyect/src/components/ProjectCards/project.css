@@ -2,7 +2,7 @@
 .projects-section {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 2fr));
-  gap: 40px;
+  gap: 48px;
   padding: 20px;
   margin-bottom: 30px;
   width: 80%;
