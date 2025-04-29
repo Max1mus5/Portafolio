@@ -6,16 +6,16 @@ import "./portafolio.css";
 import Navbar from "./Navbar/Navbar";
 import AboutMe from "./AboutMe/AboutMe";
 import ProjectSection from "./ProjectCards/ProjectCard";
-import TimelineProjects from "./ProjectCards/TimelineProjects";
 import Technologies from "./Technologies/Technologies";
 import Footer from "./Footer/Footer";
 import Work from "./Work/WorkExpericeSection";
+import TimelineWork from "./Work/TimelineWork";
 
 const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   const { t } = useTranslation('content');
   const [emailcopied, setEmailcopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [timelineView, setTimelineView] = useState(false);
+  const [timelineWorkView, setTimelineWorkView] = useState(false);
 
   useEffect(() => {
     if (!isAnimated) {
@@ -91,33 +91,33 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
         {/* Work Experience Section */}
         <header className="work-header">
           <h1 id="work-title">{t('content.workExperience')}</h1>  
-        </header>
-        <Work darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
-        
-        {/* Projects Section */}
-        <header className="projects-header">
-          <h1 id="project-title">{t('content.projects')}</h1>
-          <p id="project-text">{t('content.projectsDescription')}</p>
           <div className="view-toggle">
             <button 
-              className={`view-button ${!timelineView ? 'active' : ''}`} 
-              onClick={() => setTimelineView(false)}
+              className={`view-button ${!timelineWorkView ? 'active' : ''}`} 
+              onClick={() => setTimelineWorkView(false)}
             >
-              <span className="material-icons">grid_view</span>
+              <span className="material-icons">view_list</span>
             </button>
             <button 
-              className={`view-button ${timelineView ? 'active' : ''}`} 
-              onClick={() => setTimelineView(true)}
+              className={`view-button ${timelineWorkView ? 'active' : ''}`} 
+              onClick={() => setTimelineWorkView(true)}
             >
               <span className="material-icons">timeline</span>
             </button>
           </div>
         </header>
-        {timelineView ? (
-          <TimelineProjects darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
+        {timelineWorkView ? (
+          <TimelineWork darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
         ) : (
-          <ProjectSection darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
+          <Work darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
         )}
+        
+        {/* Projects Section */}
+        <header className="projects-header">
+          <h1 id="project-title">{t('content.projects')}</h1>
+          <p id="project-text">{t('content.projectsDescription')}</p>
+        </header>
+        <ProjectSection darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
 
         {/* Technologies Section */}
         <header className="tecnologies-header">

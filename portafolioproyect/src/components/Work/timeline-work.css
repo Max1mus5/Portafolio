@@ -1,0 +1,272 @@
+/* Estilos para la línea de tiempo de experiencia laboral */
+.timeline-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Línea central vertical */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom, 
+    rgba(87, 95, 207, 0.8), 
+    rgba(16, 172, 132, 0.8), 
+    rgba(87, 95, 207, 0.8));
+  border-radius: 2px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Contenedor de experiencias en línea de tiempo */
+.timeline-experiences {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Experiencia individual en línea de tiempo */
+.timeline-experience {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Alternancia de experiencias (izquierda/derecha) */
+.timeline-experience:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.timeline-experience:nth-child(even) {
+  justify-content: flex-end;
+}
+
+/* Nodo central para cada experiencia */
+.timeline-node {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #575fcf;
+  border-radius: 50%;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(87, 95, 207, 0.6);
+}
+
+/* Efecto hover para nodos */
+.timeline-experience:hover .timeline-node {
+  transform: translateX(-50%) scale(1.3);
+  box-shadow: 0 0 15px rgba(87, 95, 207, 0.8);
+}
+
+/* Contenedor de tarjeta de experiencia */
+.timeline-card {
+  width: 45%;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Flecha conectora */
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 30px;
+  transform: rotate(45deg);
+  background-color: inherit;
+  z-index: 0;
+}
+
+/* Posicionamiento de flechas según lado */
+.timeline-experience:nth-child(odd) .timeline-card::before {
+  right: -10px;
+}
+
+.timeline-experience:nth-child(even) .timeline-card::before {
+  left: -10px;
+}
+
+/* Efecto hover para tarjetas */
+.timeline-experience:hover .timeline-card {
+  transform: translateY(-10px);
+}
+
+/* Fecha de la experiencia */
+.timeline-date {
+  position: absolute;
+  top: -25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: rgba(87, 95, 207, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Posicionamiento de fecha según lado */
+.timeline-experience:nth-child(odd) .timeline-date {
+  right: 0;
+}
+
+.timeline-experience:nth-child(even) .timeline-date {
+  left: 0;
+}
+
+/* Efecto hover para fecha */
+.timeline-experience:hover .timeline-date {
+  transform: scale(1.1);
+  background-color: rgba(87, 95, 207, 0.4);
+}
+
+/* Adaptación para modo oscuro/claro */
+.timeline-card.dark {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.timeline-card.light {
+  background-color: #5C6D7A;
+  color: var(--white);
+}
+
+/* Estilos para los detalles de la experiencia */
+.work-details {
+  margin-top: 10px;
+}
+
+.work-title {
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.work-position {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.work-description {
+  margin-bottom: 15px;
+}
+
+/* Tecnologías */
+.work-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.work-tech img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.work-tech:hover img {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* Logo de la empresa */
+.company-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+}
+
+.company-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 880px) {
+  .timeline-container::before {
+    left: 30px;
+  }
+  
+  .timeline-experience,
+  .timeline-experience:nth-child(odd),
+  .timeline-experience:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
+  
+  .timeline-node {
+    left: 30px;
+  }
+  
+  .timeline-card {
+    width: 100%;
+  }
+  
+  .timeline-experience:nth-child(odd) .timeline-card::before,
+  .timeline-experience:nth-child(even) .timeline-card::before {
+    left: -10px;
+    right: auto;
+  }
+  
+  .timeline-experience:nth-child(odd) .timeline-date,
+  .timeline-experience:nth-child(even) .timeline-date {
+    left: 0;
+    right: auto;
+  }
+  
+  .company-logo {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-container {
+    width: 95%;
+  }
+  
+  .timeline-experience,
+  .timeline-experience:nth-child(odd),
+  .timeline-experience:nth-child(even) {
+    padding-left: 50px;
+  }
+  
+  .timeline-container::before {
+    left: 20px;
+  }
+  
+  .timeline-node {
+    left: 20px;
+    width: 18px;
+    height: 18px;
+  }
+}
