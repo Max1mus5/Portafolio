@@ -27,12 +27,25 @@ h1 {
 }
 
 /* Estilos para títulos de secciones con buen contraste */
-.fullcontent:not(.back) h1 {
+.fullcontent:not(.back) .projects-header h1,
+.fullcontent:not(.back) .work-header h1,
+.fullcontent:not(.back) .tecnologies-header h1 {
   color: #ffffff;
 }
 
-.fullcontent.back h1 {
+.fullcontent.back .projects-header h1,
+.fullcontent.back .work-header h1,
+.fullcontent.back .tecnologies-header h1 {
   color: #000000;
+}
+
+/* Estilos para el texto descriptivo de proyectos */
+.fullcontent:not(.back) #project-text {
+  color: #e0e0e0;
+}
+
+.fullcontent.back #project-text {
+  color: #333333;
 }
 
 /* Estilos específicos para títulos de secciones */

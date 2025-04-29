@@ -74,8 +74,8 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <div className="fullcontent">
-      <section className={`portafolio-scroll ${!isDarkMode ? 'back' : ''}`}>
+    <div className={`fullcontent ${!isDarkMode ? 'back' : ''}`}>
+      <section className="portafolio-scroll">
         {/* Navigation */}
         <Navbar 
           toggleLanguage={language}
