@@ -54,6 +54,61 @@ h1 {
   font-weight: bold;
 }
 
+/* Estilos para los botones de cambio de vista */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.view-button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.view-button::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #575fcf, #10ac84);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.view-button.active::after {
+  width: 100%;
+}
+
+.fullcontent:not(.back) .view-button {
+  color: #ffffff;
+}
+
+.fullcontent.back .view-button {
+  color: #000000;
+}
+
+.view-button:hover {
+  transform: translateY(-3px);
+}
+
+.view-button.active {
+  transform: translateY(-3px);
+}
+
 /* Animaciones keyframes */
 @keyframes fade-in {
   from {

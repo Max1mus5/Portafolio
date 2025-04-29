@@ -1,0 +1,198 @@
+/* Estilos para la línea de tiempo de proyectos */
+.timeline-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Línea central vertical */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(to bottom, 
+    rgba(87, 95, 207, 0.8), 
+    rgba(16, 172, 132, 0.8), 
+    rgba(87, 95, 207, 0.8));
+  border-radius: 2px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Contenedor de proyectos en línea de tiempo */
+.timeline-projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Proyecto individual en línea de tiempo */
+.timeline-project {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Alternancia de proyectos (izquierda/derecha) */
+.timeline-project:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.timeline-project:nth-child(even) {
+  justify-content: flex-end;
+}
+
+/* Nodo central para cada proyecto */
+.timeline-node {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #575fcf;
+  border-radius: 50%;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(87, 95, 207, 0.6);
+}
+
+/* Efecto hover para nodos */
+.timeline-project:hover .timeline-node {
+  transform: translateX(-50%) scale(1.3);
+  box-shadow: 0 0 15px rgba(87, 95, 207, 0.8);
+}
+
+/* Contenedor de tarjeta de proyecto */
+.timeline-card {
+  width: 45%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Flecha conectora */
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 30px;
+  transform: rotate(45deg);
+  background-color: inherit;
+  z-index: 0;
+}
+
+/* Posicionamiento de flechas según lado */
+.timeline-project:nth-child(odd) .timeline-card::before {
+  right: -10px;
+}
+
+.timeline-project:nth-child(even) .timeline-card::before {
+  left: -10px;
+}
+
+/* Efecto hover para tarjetas */
+.timeline-project:hover .timeline-card {
+  transform: translateY(-10px);
+}
+
+/* Fecha del proyecto */
+.timeline-date {
+  position: absolute;
+  top: -25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: rgba(87, 95, 207, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Posicionamiento de fecha según lado */
+.timeline-project:nth-child(odd) .timeline-date {
+  right: 0;
+}
+
+.timeline-project:nth-child(even) .timeline-date {
+  left: 0;
+}
+
+/* Efecto hover para fecha */
+.timeline-project:hover .timeline-date {
+  transform: scale(1.1);
+  background-color: rgba(87, 95, 207, 0.4);
+}
+
+/* Adaptación para modo oscuro/claro */
+.timeline-card.dark {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.timeline-card.light {
+  background-color: #5C6D7A;
+  color: var(--white);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 880px) {
+  .timeline-container::before {
+    left: 30px;
+  }
+  
+  .timeline-project,
+  .timeline-project:nth-child(odd),
+  .timeline-project:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
+  
+  .timeline-node {
+    left: 30px;
+  }
+  
+  .timeline-card {
+    width: 100%;
+  }
+  
+  .timeline-project:nth-child(odd) .timeline-card::before,
+  .timeline-project:nth-child(even) .timeline-card::before {
+    left: -10px;
+    right: auto;
+  }
+  
+  .timeline-project:nth-child(odd) .timeline-date,
+  .timeline-project:nth-child(even) .timeline-date {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-container {
+    width: 95%;
+  }
+  
+  .timeline-project,
+  .timeline-project:nth-child(odd),
+  .timeline-project:nth-child(even) {
+    padding-left: 50px;
+  }
+  
+  .timeline-container::before {
+    left: 20px;
+  }
+  
+  .timeline-node {
+    left: 20px;
+    width: 18px;
+    height: 18px;
+  }
+}

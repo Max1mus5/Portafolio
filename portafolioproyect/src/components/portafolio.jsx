@@ -6,6 +6,7 @@ import "./portafolio.css";
 import Navbar from "./Navbar/Navbar";
 import AboutMe from "./AboutMe/AboutMe";
 import ProjectSection from "./ProjectCards/ProjectCard";
+import TimelineProjects from "./ProjectCards/TimelineProjects";
 import Technologies from "./Technologies/Technologies";
 import Footer from "./Footer/Footer";
 import Work from "./Work/WorkExpericeSection";
@@ -14,6 +15,7 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   const { t } = useTranslation('content');
   const [emailcopied, setEmailcopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
+  const [timelineView, setTimelineView] = useState(false);
 
   useEffect(() => {
     if (!isAnimated) {
@@ -96,8 +98,26 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
         <header className="projects-header">
           <h1 id="project-title">{t('content.projects')}</h1>
           <p id="project-text">{t('content.projectsDescription')}</p>
+          <div className="view-toggle">
+            <button 
+              className={`view-button ${!timelineView ? 'active' : ''}`} 
+              onClick={() => setTimelineView(false)}
+            >
+              <span className="material-icons">grid_view</span>
+            </button>
+            <button 
+              className={`view-button ${timelineView ? 'active' : ''}`} 
+              onClick={() => setTimelineView(true)}
+            >
+              <span className="material-icons">timeline</span>
+            </button>
+          </div>
         </header>
-        <ProjectSection darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
+        {timelineView ? (
+          <TimelineProjects darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
+        ) : (
+          <ProjectSection darkMode={darkMode} className={isAnimated ? 'project-section' : ''} />
+        )}
 
         {/* Technologies Section */}
         <header className="tecnologies-header">
