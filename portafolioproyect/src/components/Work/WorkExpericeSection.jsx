@@ -17,7 +17,13 @@ const WorkExperienceSection = ({ darkMode = false }) => {
           >
             <div className="header-work-experience">
             <img
-                src={workExperience.imageUrl}
+                src={
+                  workExperience.altText === "GISOSA Logo"
+                    ? darkMode
+                      ? "https://res.cloudinary.com/dmz5obrqc/image/upload/v1745967262/portafolio/baz5xhysuawgzpr5lfus.png"
+                      : "https://res.cloudinary.com/dmz5obrqc/image/upload/v1745967258/portafolio/wad29jpvqd0b922w5bfi.png"
+                    : workExperience.imageUrl
+                }
                 alt={workExperience.altText}
                 className={`image-work-experience ${
                   darkMode

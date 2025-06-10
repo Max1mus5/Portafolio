@@ -7,7 +7,13 @@
     "climj": {
       "description": "A simple application to consult the weather forecast in real time"
     },
-     "loading": "Loading..."
+    "graphicator": {
+      "description": "A drawing application that implements various algorithms like DDA, Bresenham, and Bezier curves for drawing geometric shapes"
+    },
+    "imageviewer": {
+      "description": "An image processing application that allows users to apply various filters and transformations to images, as well as generate histograms"
+    },
+    "loading": "Loading..."
   }
  
 }

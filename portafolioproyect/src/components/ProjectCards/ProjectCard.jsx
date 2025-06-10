@@ -61,6 +61,34 @@ const createProjectsData = (t) => [
     ],
     imageUrl: 'https://github.com/Max1mus5/weather-app/assets/75461653/6cbdb56f-3d2a-487e-9ecf-6437b930087b',
     altText: 'ClimJ'
+  },
+  {
+    id: 3,
+    type: t('projects.personal'),
+    title: 'Graphicator',
+    description: t('projects.graphicator.description'),
+    githubLink: 'https://github.com/Max1mus5/Computacion-Grafica/tree/main/GraphicatorProjectDjango',
+    demoLink: 'https://computacion-grafica-proyecto-visor.onrender.com',
+    technologies: [
+      { icon: python, alt: 'python' },
+      { icon: css3, alt: 'css3' }
+    ],
+    imageUrl: 'https://res.cloudinary.com/dmz5obrqc/image/upload/v1745964233/portafolio/q756fsztei1lg7fbhf6o.png',
+    altText: 'Graphicator'
+  },
+  {
+    id: 4,
+    type: t('projects.personal'),
+    title: 'Image Viewer',
+    description: t('projects.imageviewer.description'),
+    githubLink: 'https://github.com/Max1mus5/Computacion-Grafica/tree/main/proyecto_visor_imagen',
+    demoLink: 'https://computacion-grafica-proyecto-visor.onrender.com',
+    technologies: [
+      { icon: python, alt: 'python' },
+      { icon: css3, alt: 'css3' }
+    ],
+    imageUrl: 'https://res.cloudinary.com/dmz5obrqc/image/upload/v1745964233/portafolio/ooigapjfflijk8evwl4v.png',
+    altText: 'Image Viewer'
   }
 ];
 

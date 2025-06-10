@@ -26,6 +26,89 @@ h1 {
   text-align: center;
 }
 
+/* Estilos para títulos de secciones con buen contraste */
+.fullcontent:not(.back) .projects-header h1,
+.fullcontent:not(.back) .work-header h1,
+.fullcontent:not(.back) .tecnologies-header h1 {
+  color: #ffffff;
+}
+
+.fullcontent.back .projects-header h1,
+.fullcontent.back .work-header h1,
+.fullcontent.back .tecnologies-header h1 {
+  color: #000000;
+}
+
+/* Estilos para el texto descriptivo de proyectos */
+.fullcontent:not(.back) #project-text {
+  color: #e0e0e0;
+}
+
+.fullcontent.back #project-text {
+  color: #333333;
+}
+
+/* Estilos específicos para títulos de secciones */
+#work-title, #project-title, #tecnologies-title {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Estilos para los botones de cambio de vista */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.view-button {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.view-button::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #575fcf, #10ac84);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.view-button.active::after {
+  width: 100%;
+}
+
+.fullcontent:not(.back) .view-button {
+  color: #ffffff;
+}
+
+.fullcontent.back .view-button {
+  color: #000000;
+}
+
+.view-button:hover {
+  transform: translateY(-3px);
+}
+
+.view-button.active {
+  transform: translateY(-3px);
+}
+
 /* Animaciones keyframes */
 @keyframes fade-in {
   from {

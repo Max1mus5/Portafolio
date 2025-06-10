@@ -1,6 +1,23 @@
 {
   "work": [
     {
+      "company": "GISOSA",
+      "role": "Backend Developer",
+      "period": "04/2025 - Present",
+      "imageUrl": "//www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
+      "altText": "GISOSA Logo",
+      "achievements": [
+        "Requirements gathering with healthcare system stakeholders",
+        "Design and documentation of robust RESTful APIs",
+        "Integration of internal systems with external platforms like EPS and RIPS portals",
+        "Code refactoring to improve maintainability and performance",
+        "Implementation of unit, integration, and end-to-end tests",
+        "Configuration of development and production environments using Docker and Kubernetes",
+        "Implementation of CI/CD pipelines for efficient and secure deployments"
+      ],
+      "url":""
+    },
+    {
       "company": "WMT (CallWave)",
       "role": "Frontend Developer",
       "period": "15/09/2024 - 01/05/2025",

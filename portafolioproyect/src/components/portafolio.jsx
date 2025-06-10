@@ -9,11 +9,13 @@ import ProjectSection from "./ProjectCards/ProjectCard";
 import Technologies from "./Technologies/Technologies";
 import Footer from "./Footer/Footer";
 import Work from "./Work/WorkExpericeSection";
+import TimelineWork from "./Work/TimelineWork";
 
 const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   const { t } = useTranslation('content');
   const [emailcopied, setEmailcopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
+  const [timelineWorkView, setTimelineWorkView] = useState(false);
 
   useEffect(() => {
     if (!isAnimated) {
@@ -74,8 +76,8 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <div className="fullcontent">
-      <section className={`portafolio-scroll ${!isDarkMode ? 'back' : ''}`}>
+    <div className={`fullcontent ${!isDarkMode ? 'back' : ''}`}>
+      <section className="portafolio-scroll">
         {/* Navigation */}
         <Navbar 
           toggleLanguage={language}
@@ -89,8 +91,26 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
         {/* Work Experience Section */}
         <header className="work-header">
           <h1 id="work-title">{t('content.workExperience')}</h1>  
+          <div className="view-toggle">
+            <button 
+              className={`view-button ${!timelineWorkView ? 'active' : ''}`} 
+              onClick={() => setTimelineWorkView(false)}
+            >
+              <span className="material-icons">view_list</span>
+            </button>
+            <button 
+              className={`view-button ${timelineWorkView ? 'active' : ''}`} 
+              onClick={() => setTimelineWorkView(true)}
+            >
+              <span className="material-icons">timeline</span>
+            </button>
+          </div>
         </header>
-        <Work darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
+        {timelineWorkView ? (
+          <TimelineWork darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
+        ) : (
+          <Work darkMode={darkMode} className={isAnimated ? 'work-experience-section' : ''} />
+        )}
         
         {/* Projects Section */}
         <header className="projects-header">
