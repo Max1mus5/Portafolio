@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { PiWhatsappLogoDuotone } from 'react-icons/pi';
 import './about.css';
 
 const AboutMe = ({ darkMode }) => {
@@ -76,6 +77,22 @@ const AboutMe = ({ darkMode }) => {
           {emailcopied ? t('about.social.email.copied') : ""}
         </div>
       </div>
+
+      {/* WhatsApp Icon */}
+      <a
+        className="contact-icon"
+        title="WhatsApp"
+        href="https://wa.me/+573025276300"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <PiWhatsappLogoDuotone
+          size={32}
+          color={darkMode ? '#25D366' : '#075E54'}
+          style={{ background: darkMode ? '#222f3e' : '#fff', borderRadius: '50%' }}
+        />
+      </a>
     </div>
   );
 
