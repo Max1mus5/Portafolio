@@ -86,7 +86,7 @@ const Navbar = ({
         </button>
 
         <a 
-          href="https://drive.google.com/file/d/1V5sRrBosfkParSI5EkPgVOB_ikkkMlRJ/view?usp=sharing" 
+          href={t('navbar.cvLink')} 
           target='_blank' 
           rel="noopener noreferrer"
           className={!darkMode ? 'ligth_Mode' : ''}

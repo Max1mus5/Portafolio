@@ -2,6 +2,7 @@
   "navbar": {
     "translate": "Translate",
     "switchTheme": "Switch Theme",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "cvLink": "https://drive.google.com/file/d/1PHIEFD1uDyxHD2O32_eEabU6x7CdqDNq/view?usp=sharing"
   }
 }
