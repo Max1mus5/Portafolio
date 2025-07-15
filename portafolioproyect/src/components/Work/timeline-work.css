@@ -9,7 +9,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  min-height: 50vh;
+  min-height: 500px !important;
   overflow-x: hidden;
 }
 
@@ -340,7 +340,7 @@
 /* Marcador final */
 .treasure-map-end {
   position: absolute;
-  bottom: -40px;
+  bottom: -75px;
   right: 25%;
   transform: translateX(50%);
   z-index: 3;
@@ -905,4 +905,11 @@
   .studying-text {
     font-size: 8px;
   }
+}
+
+
+/* esconder barra de scroll */
+::-webkit-scrollbar {
+  width: 0 !important;
+  background: transparent;
 }
