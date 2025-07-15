@@ -12,6 +12,30 @@
   min-width: 460px;
   z-index: 1;
   transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* Technologies Section - Dark Mode */
+.technologies-section.dark {
+  opacity: 1;
+}
+
+/* Technologies Section - Light Mode */
+.technologies-section.light {
+  opacity: 1;
+}
+
+/* Technologies Section with ID */
+#technologies {
+  opacity: 1 !important;
+}
+
+#technologies.dark {
+  opacity: 1 !important;
+}
+
+#technologies.light {
+  opacity: 1 !important;
 }
 
 /* Top Section Layout */
@@ -45,17 +69,20 @@
   background-color: #1a1a1a;
   border: 2px solid #FFFFFF;
   color: var(--white);
+  opacity: 1;
 }
 
 .technologies.dark h2 {
   color: var(--white);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
 .technologies.dark:hover {
   animation: neon-border 1.5s infinite;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* Light Mode Styles */
@@ -63,17 +90,20 @@
   background-color: #5C6D7A;
   border: 2px solid #000000;
   color: var(--white);
+  opacity: 1;
 }
 
 .technologies.light h2 {
   color: var(--white);
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
 .technologies.light:hover {
   animation: light-border 1.5s infinite;
   box-shadow: 0 0 20px rgba(0, 170, 255, 0.1);
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* Section Titles */
@@ -118,16 +148,18 @@
   height: 32px;
   border-radius: 50%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.8;
+  opacity: 1;
   filter: grayscale(20%);
 }
 
 .technologies.dark .icon-img-tech {
   filter: brightness(0.9) grayscale(20%);
+  opacity: 1;
 }
 
 .technologies.light .icon-img-tech {
   filter: brightness(1) grayscale(20%);
+  opacity: 1;
 }
 
 /* Icon Hover Effects */
