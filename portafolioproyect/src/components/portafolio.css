@@ -136,6 +136,8 @@ h1 {
 .about-section,
 .projects-header,
 .project-section,
+.work-header,
+.work-experience-section,
 .tecnologies-header,
 .technologies-section,
 .footer-section {
@@ -178,6 +180,23 @@ h1 {
   view-timeline-name: --footer;
   view-timeline-axis: block;
   animation-timeline: --footer;
+}
+
+.work-header {
+  view-timeline-name: --work-header;
+  view-timeline-axis: block;
+  animation-timeline: --work-header;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.work-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* Estilos de scrollbar */

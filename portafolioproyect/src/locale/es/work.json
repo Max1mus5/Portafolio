@@ -1,9 +1,112 @@
 {
+  "timeline": {
+    "start": "Inicio de mi carrera",
+    "present": "Presente",
+    "studying": "Continúo estudiando..."
+  },
+  "milestones": [
+    {
+      "id": "career-start",
+      "type": "milestone",
+      "date": "Febrero 2022",
+      "title": "Inicio de mi Carrera",
+      "description": "Comienzo mi camino en el desarrollo de software",
+      "icon": "🎯",
+      "category": "inicio"
+    },
+    {
+      "id": "bootcamp-admission",
+      "type": "education",
+      "date": "Mediados 2022",
+      "title": "UTP Full Stack Pool Bootcamp",
+      "institution": "Universidad Tecnológica de Pereira",
+      "description": "Admitido en el bootcamp intensivo de desarrollo Full Stack",
+      "icon": "🎓",
+      "category": "educacion"
+    },
+    {
+      "id": "bootcamp-completion",
+      "type": "education", 
+      "date": "Finales 2022",
+      "title": "Finalización Bootcamp",
+      "institution": "Universidad Tecnológica de Pereira",
+      "description": "Completé exitosamente el Full Stack Pool Bootcamp",
+      "icon": "🏆",
+      "category": "educacion"
+    },
+    {
+      "id": "diploma-start",
+      "type": "education",
+      "date": "27/11/2023",
+      "title": "Diploma Full Stack Programmer",
+      "institution": "Universidad Tecnológica de Pereira",
+      "description": "Inicio del programa de diploma en programación Full Stack",
+      "icon": "📚",
+      "category": "educacion"
+    },
+    {
+      "id": "diploma-completion",
+      "type": "education",
+      "date": "14/06/2024",
+      "title": "Graduación Diploma",
+      "institution": "Universidad Tecnológica de Pereira", 
+      "description": "Finalización exitosa del Full Stack Programmer Diploma",
+      "icon": "🎓",
+      "category": "educacion"
+    },
+    {
+      "id": "projects-practice",
+      "type": "milestone",
+      "date": "Mediados 2024",
+      "title": "Desarrollo de Proyectos",
+      "description": "Comienzo a practicar y desarrollar proyectos personales",
+      "icon": "💻",
+      "category": "desarrollo"
+    }
+  ],
   "work": [
     {
+      "company": "MyWacc",
+      "role": "Desarrollador Full Stack",
+      "period": "05/08/2024 - 06/06/2025",
+      "startDate": "2024-08-05",
+      "endDate": "2025-06-06",
+      "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
+      "altText": "MyWacc Logo",
+      "achievements": [
+        "Desarrollo y mantenimiento de endpoints de backend utilizando Django y Python",
+        "Mejora y optimización del frontend implementado en Vue.js",
+        "Optimización del servidor en la nube de Azure, logrando una reducción del 75% en los tiempos de respuesta",
+        "Implementación de internacionalización para español y portugués en el frontend",
+        "Desarrollo y mantenimiento de la documentación técnica del proyecto",
+        "Integración de Modelos de Lenguaje Grande (LLM) para mejorar la experiencia del usuario"
+      ],
+      "url": "https://mywacc.com/",
+      "status": "finalizado"
+    },
+    {
+      "company": "WMT (CallWave)",
+      "role": "Desarrollador Frontend",
+      "period": "15/09/2024 - 01/05/2025",
+      "startDate": "2024-09-15", 
+      "endDate": "2025-05-01",
+      "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1732599100/Callwave/ky0ayzwfud4kryawvm4x.png",
+      "altText": "WMT Logo",
+      "achievements": [
+        "Estilizado y animación de landings exitosas",
+        "Establecimiento de estándares de código y mejores prácticas en el equipo de frontend",
+        "Implementación de nuevas funcionalidades en React.js, mejorando la experiencia de usuario",
+        "Optimización del rendimiento de la aplicación, reduciendo los tiempos de carga en un 40%"
+      ],
+      "url": "https://www.wmt.cl/",
+      "status": "finalizado"
+    },
+    {
       "company": "GISOSA",
-      "role": "Desarrollador de back-end",
+      "role": "Desarrollador de Back-end",
       "period": "04/2025 - Presente",
+      "startDate": "2025-04-01",
+      "endDate": null,
       "imageUrl": "//www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
       "altText": "GISOSA Logo",
       "achievements": [
@@ -15,37 +118,14 @@
         "Configuración de entornos de desarrollo y producción utilizando Docker y Kubernetes",
         "Implementación de pipelines CI/CD para despliegues eficientes y seguros"
       ],
-      "url":""
-    },
-    {
-      "company": "WMT (CallWave)",
-      "role": "Desarrollador Frontend",
-      "period": "15/09/2024 - 01/05/2025",
-      "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1732599100/Callwave/ky0ayzwfud4kryawvm4x.png",
-      "altText": "WMT Logo",
-      "achievements": [
-        "Estilizado de y animación de landings exitosas.",
-        "Establecimiento de estándares de código y mejores prácticas en el equipo de frontend.",
-        "Implementación de nuevas funcionalidades en React.js, mejorando la experiencia de usuario.",
-        "Optimización del rendimiento de la aplicación, reduciendo los tiempos de carga en un 40%."
-      ],
-      "url":"https://www.wmt.cl/"
-    },
-    {
-      "company": "MyWacc",
-      "role": "Desarrollador Full Stack",
-      "period": "05/08/2024 - 06/06/2025",
-      "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
-      "altText": "MyWacc Logo",
-      "achievements": [
-        "Desarrollo y mantenimiento de endpoints de backend utilizando Django y Python.",
-        "Mejora y optimización del frontend implementado en Vue.js.",
-        "Optimización del servidor en la nube de Azure, logrando una reducción del 75% en los tiempos de respuesta.",
-        "Implementación de internacionalización para español y portugués en el frontend.",
-        "Desarrollo y mantenimiento de la documentación técnica del proyecto.",
-        "Integración de Modelos de Lenguaje Grande (LLM) para mejorar la experiencia del usuario."
-      ],
-      "url":"https://mywacc.com/"
+      "url": "",
+      "status": "actual"
     }
-  ]
+  ],
+  "currentStudies": {
+    "title": "Bootcamp de IA Básico",
+    "description": "Afianzando conceptos de redes y álgebra lineal para desarrollar aplicaciones con modelos de ML",
+    "period": "Actualidad",
+    "icon": "🤖"
+  }
 }

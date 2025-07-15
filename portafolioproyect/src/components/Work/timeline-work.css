@@ -1,103 +1,624 @@
-/* Estilos para la línea de tiempo de experiencia laboral */
-.timeline-container {
-  position: relative;
-  width: 90%;
-  margin: 0 auto;
-  padding: 40px 0;
-}
+/* =================================================================
+   TREASURE MAP TIMELINE STYLES
+   ================================================================= */
 
-/* Línea central vertical */
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: linear-gradient(to bottom, 
-    rgba(87, 95, 207, 0.8), 
-    rgba(16, 172, 132, 0.8), 
-    rgba(87, 95, 207, 0.8));
-  border-radius: 2px;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-/* Contenedor de experiencias en línea de tiempo */
-.timeline-experiences {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
-
-/* Experiencia individual en línea de tiempo */
-.timeline-experience {
+/* Contenedor principal del mapa del tesoro */
+.treasure-map-container {
   position: relative;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  min-height: 50vh;
+  overflow-x: hidden;
+}
+
+.treasure-map-container.dark {
+  background: linear-gradient(135deg, 
+    rgba(26, 26, 26, 0.95) 0%, 
+    rgba(51, 51, 51, 0.85) 50%, 
+    rgba(26, 26, 26, 0.95) 100%);
+}
+
+.treasure-map-container.light {
+  background: linear-gradient(135deg, 
+    rgba(249, 250, 251, 0.95) 0%, 
+    rgba(92, 109, 122, 0.15) 50%, 
+    rgba(249, 250, 251, 0.95) 100%);
+}
+
+/* Contenedor del path curvo */
+.treasure-map-path {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 1200px;
+}
+
+/* SVG del path curvo */
+.curved-path {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Línea del path */
+.path-line {
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 10, 5;
+  animation: pathDraw 3s ease-in-out forwards, pathFlow 4s ease-in-out infinite 3s;
+}
+
+.path-line.dark {
+  stroke: #4bcffa;
+  filter: drop-shadow(0 0 10px rgba(75, 207, 250, 0.6));
+}
+
+.path-line.light {
+  stroke: #3b82f6;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+/* Puntos del path */
+.path-point {
+  opacity: 0;
+  animation: pointAppear 0.8s ease-out forwards;
+}
+
+.start-point, .end-point {
+  fill: #10b981;
+  stroke: #065f46;
+  stroke-width: 2;
+  animation-delay: 1s;
+}
+
+.experience-point {
+  fill: #f59e0b;
+  stroke: #92400e;
+  stroke-width: 2;
+  animation: pointPulse 2s ease-in-out infinite, pointAppear 0.8s ease-out forwards;
+}
+
+.experience-point:nth-child(3) { animation-delay: 1.5s; }
+.experience-point:nth-child(4) { animation-delay: 2s; }
+.experience-point:nth-child(5) { animation-delay: 2.5s; }
+
+/* Contenedor de experiencias */
+.treasure-map-experiences {
+  position: relative;
+  z-index: 2;
+}
+
+/* Marcador de inicio */
+.treasure-map-start {
+  position: absolute;
+  top: -20px;
+  left: 25%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.start-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: floatStart 3s ease-in-out infinite;
+}
+
+.start-marker.dark {
+  background: rgba(26, 26, 26, 0.9);
+  border: 2px solid #4bcffa;
+  color: #f9fafb;
+  box-shadow: 0 0 20px rgba(75, 207, 250, 0.3);
+}
+
+.start-marker.light {
+  background: rgba(249, 250, 251, 0.9);
+  border: 2px solid #3b82f6;
+  color: #1f2937;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.start-icon {
+  font-size: 24px;
+  animation: bounceIcon 2s ease-in-out infinite;
+}
+
+.start-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Experiencias del mapa del tesoro */
+.treasure-map-experience {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: var(--delay);
+}
+
+.treasure-map-experience.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Posicionamiento de experiencias */
+.treasure-map-experience.position-0 {
+  top: 280px;
+  right: 20%;
+}
+
+.treasure-map-experience.position-1 {
+  top: 580px;
+  left: 10%;
+}
+
+.treasure-map-experience.position-2 {
+  top: 880px;
+  right: 15%;
+}
+
+/* Tarjeta del tesoro */
+.treasure-card {
+  position: relative;
+  width: 300px;
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.treasure-card.dark {
+  background: linear-gradient(135deg, 
+    rgba(51, 51, 51, 0.95) 0%, 
+    rgba(26, 26, 26, 0.9) 100%);
+  border: 2px solid #4bcffa;
+  color: #f9fafb;
+  box-shadow: 0 10px 30px rgba(75, 207, 250, 0.2);
+}
+
+.treasure-card.light {
+  background: linear-gradient(135deg, 
+    rgba(249, 250, 251, 0.95) 0%, 
+    rgba(92, 109, 122, 0.1) 100%);
+  border: 2px solid #3b82f6;
+  color: #1f2937;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+.treasure-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  animation: treasureGlow 1.5s ease-in-out infinite;
+}
+
+/* Fecha con pergamino */
+.treasure-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.date-scroll {
+  font-size: 18px;
+  animation: scrollWave 2s ease-in-out infinite;
+}
+
+/* Logo de la empresa */
+.company-treasure-logo {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  margin-bottom: 15px;
 }
 
-/* Alternancia de experiencias (izquierda/derecha) */
-.timeline-experience:nth-child(odd) {
-  justify-content: flex-start;
-}
-
-.timeline-experience:nth-child(even) {
-  justify-content: flex-end;
-}
-
-/* Nodo central para cada experiencia */
-.timeline-node {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: #575fcf;
-  border-radius: 50%;
-  left: 50%;
-  top: 30px;
-  transform: translateX(-50%);
-  z-index: 2;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(87, 95, 207, 0.6);
-}
-
-/* Efecto hover para nodos */
-.timeline-experience:hover .timeline-node {
-  transform: translateX(-50%) scale(1.3);
-  box-shadow: 0 0 15px rgba(87, 95, 207, 0.8);
-}
-
-/* Contenedor de tarjeta de experiencia */
-.timeline-card {
-  width: 45%;
-  position: relative;
-  transition: all 0.3s ease;
-  padding: 20px;
+.company-logo-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
   border-radius: 10px;
+  padding: 8px;
+  transition: all 0.3s ease;
 }
 
-/* Flecha conectora */
-.timeline-card::before {
-  content: '';
+.company-logo-img.dark {
+  background: rgba(249, 250, 251, 0.1);
+  filter: brightness(1.1);
+}
+
+.company-logo-img.light {
+  background: rgba(26, 26, 26, 0.05);
+  filter: brightness(0.95);
+}
+
+.company-logo-img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Información del tesoro */
+.treasure-info {
+  text-align: center;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(45deg, #4bcffa, #10b981);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.treasure-card.light .company-name {
+  background: linear-gradient(45deg, #3b82f6, #059669);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.role-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+  opacity: 0.8;
+}
+
+/* Preview de logros */
+.achievements-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.achievement-icon {
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+/* Conector decorativo */
+.treasure-connector {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 30px;
-  transform: rotate(45deg);
-  background-color: inherit;
-  z-index: 0;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  animation: connectorPulse 2s ease-in-out infinite;
 }
 
-/* Posicionamiento de flechas según lado */
-.timeline-experience:nth-child(odd) .timeline-card::before {
+/* Efectos decorativos */
+.treasure-effects {
+  position: absolute;
+  top: -10px;
   right: -10px;
+  pointer-events: none;
 }
 
-.timeline-experience:nth-child(even) .timeline-card::before {
-  left: -10px;
+.effect-sparkle,
+.effect-star,
+.effect-gem {
+  position: absolute;
+  font-size: 12px;
+  animation: effectFloat 3s ease-in-out infinite;
+}
+
+.effect-sparkle {
+  top: 0;
+  right: 0;
+  animation-delay: 0s;
+}
+
+.effect-star {
+  top: 15px;
+  right: 20px;
+  animation-delay: 1s;
+}
+
+.effect-gem {
+  top: -5px;
+  right: 15px;
+  animation-delay: 2s;
+}
+
+/* Marcador final */
+.treasure-map-end {
+  position: absolute;
+  bottom: -40px;
+  right: 25%;
+  transform: translateX(50%);
+  z-index: 3;
+}
+
+.end-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: floatEnd 3s ease-in-out infinite;
+}
+
+.end-marker.dark {
+  background: rgba(26, 26, 26, 0.9);
+  border: 2px solid #10b981;
+  color: #f9fafb;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.end-marker.light {
+  background: rgba(249, 250, 251, 0.9);
+  border: 2px solid #059669;
+  color: #1f2937;
+  box-shadow: 0 0 15px rgba(5, 150, 105, 0.2);
+}
+
+.end-icon {
+  font-size: 24px;
+  animation: trophyShine 2s ease-in-out infinite;
+}
+
+.end-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =================================================================
+   ANIMACIONES
+   ================================================================= */
+
+@keyframes pathDraw {
+  0% {
+    stroke-dasharray: 0, 2000;
+  }
+  100% {
+    stroke-dasharray: 2000, 0;
+  }
+}
+
+@keyframes pathFlow {
+  0%, 100% {
+    stroke-dasharray: 10, 5;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 10, 5;
+    stroke-dashoffset: 15;
+  }
+}
+
+@keyframes pointAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pointPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floatStart {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+@keyframes floatEnd {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+@keyframes bounceIcon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes trophyShine {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes treasureGlow {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(75, 207, 250, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 40px rgba(75, 207, 250, 0.4);
+  }
+}
+
+@keyframes scrollWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes connectorPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+@keyframes effectFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN
+   ================================================================= */
+
+@media screen and (max-width: 768px) {
+  .treasure-map-container {
+    padding: 40px 10px;
+    min-height: 40vh; /* Reducir altura mínima en tabletas */
+  }
+  
+  .curved-path {
+    width: 300px;
+  }
+  
+  .treasure-card {
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .treasure-map-experience.position-0 {
+    right: 5%;
+  }
+  
+  .treasure-map-experience.position-1 {
+    left: 5%;
+  }
+  
+  .treasure-map-experience.position-2 {
+    right: 5%;
+  }
+  
+  .company-name {
+    font-size: 16px;
+  }
+  
+  .role-name {
+    font-size: 13px;
+  }
+  
+  /* Ajustar marcadores en tabletas */
+  .treasure-map-start {
+    left: 20%;
+  }
+  
+  .treasure-map-end {
+    right: 20%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .treasure-map-container {
+    min-height: 30vh; /* Altura mínima muy reducida para móviles */
+    padding: 30px 10px;
+  }
+  
+  .treasure-card {
+    width: 220px;
+    padding: 15px;
+  }
+  
+  .curved-path {
+    width: 250px;
+  }
+  
+  .company-logo-img {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .treasure-map-experience.position-0,
+  .treasure-map-experience.position-1,
+  .treasure-map-experience.position-2 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Marcadores centrados verticalmente en móvil */
+  .treasure-map-start {
+    left: 15%;
+    transform: translateX(0);
+  }
+  
+  .treasure-map-end {
+    right: 15%;
+    transform: translateX(0);
+  }
+  
+  /* Textos más pequeños en móviles */
+  .start-text, .end-text {
+    font-size: 10px;
+  }
+  
+  .start-icon, .end-icon {
+    font-size: 20px;
+  }
 }
 
 /* Efecto hover para tarjetas */
@@ -268,5 +789,120 @@
     left: 20px;
     width: 18px;
     height: 18px;
+  }
+}
+
+/* Estilos para milestones educativos */
+.milestone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.milestone-icon.dark {
+  background: rgba(75, 207, 250, 0.1);
+  border: 2px solid rgba(75, 207, 250, 0.3);
+}
+
+.milestone-icon.light {
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.milestone-icon:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+/* Estilos para instituciones educativas */
+.institution-name {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.7;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Estilos para estudios actuales */
+.current-studies .treasure-card {
+  border-style: dashed;
+  animation: studyPulse 3s ease-in-out infinite;
+}
+
+@keyframes studyPulse {
+  0%, 100% {
+    border-opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    border-opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Texto de "continúo estudiando" */
+.studying-text {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-top: 5px;
+  display: block;
+  font-style: italic;
+}
+
+/* Ajustes dinámicos para posicionamiento */
+.treasure-map-experience.position-dynamic {
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor adaptativo */
+.treasure-map-container {
+  min-height: auto;
+}
+
+.treasure-map-path {
+  min-height: auto;
+}
+
+/* SVG path adaptativo */
+.curved-path {
+  height: auto;
+  min-height: 100%;
+}
+
+/* Media query para dispositivos muy pequeños (320px y menos) */
+@media screen and (max-width: 320px) {
+  .treasure-map-container {
+    min-height: 25vh;
+    padding: 20px 5px;
+  }
+  
+  .treasure-card {
+    width: 200px;
+    padding: 12px;
+  }
+  
+  .treasure-map-start {
+    left: 10%;
+  }
+  
+  .treasure-map-end {
+    right: 10%;
+  }
+  
+  .start-marker, .end-marker {
+    padding: 10px;
+    gap: 5px;
+  }
+  
+  .start-text, .end-text {
+    font-size: 9px;
+  }
+  
+  .studying-text {
+    font-size: 8px;
   }
 }
