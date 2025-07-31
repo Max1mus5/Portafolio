@@ -15,6 +15,9 @@
     "imageviewer": {
       "description": "Una aplicación de procesamiento de imágenes que permite a los usuarios aplicar varios filtros y transformaciones a las imágenes, así como generar histogramas"
     },
+    "chatagent": {
+      "description": "Un agente de chatbot inteligente con integración de IA desarrollado para una competencia de hackathon. Incluye reconocimiento de voz, análisis de sentimientos y respuestas en tiempo real usando Gemini AI"
+    },
     "loading": "Cargando..."
   }
   

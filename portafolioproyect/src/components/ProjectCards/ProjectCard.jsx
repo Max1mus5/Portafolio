@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next';
 import react_icon from '../../assets/react-icon.svg';
 import python from '../../assets/python-icon.svg';
 import css3 from '../../assets/css3-icon.svg';
+import js_icon from '../../assets/js-icon.svg';
+import node_icon from '../../assets/node-icon.svg';
 import './project.css';
 
 // SVG Components for better organization and reusability
@@ -89,6 +91,22 @@ const createProjectsData = (t) => [
     ],
     imageUrl: 'https://res.cloudinary.com/dmz5obrqc/image/upload/v1745964233/portafolio/ooigapjfflijk8evwl4v.png',
     altText: 'Image Viewer'
+  },
+  {
+    id: 5,
+    type: t('projects.personal'),
+    title: 'Agente de Chat + AI',
+    description: t('projects.chatagent.description'),
+    githubLink: 'https://github.com/Max1mus5/HACKATON',
+    demoLink: 'https://hackaton-three-opal.vercel.app/',
+    technologies: [
+      { icon: js_icon, alt: 'javascript' },
+      { icon: python, alt: 'python' },
+      { icon: node_icon, alt: 'nodejs' },
+      { icon: css3, alt: 'css3' }
+    ],
+    imageUrl: 'https://github.com/Max1mus5/HACKATON/blob/master/public/img/LOGO%20LEAN.png?raw=true',
+    altText: 'Chat Agent AI'
   }
 ];
 
