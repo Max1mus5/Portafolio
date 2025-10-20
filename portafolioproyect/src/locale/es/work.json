@@ -71,7 +71,7 @@
       "period": "05/08/2024 - 06/06/2025",
       "startDate": "2024-08-05",
       "endDate": "2025-06-06",
-      "imageUrl": "https://mywacc.com/wp-content/uploads/2023/09/logo-celeste-negro.svg",
+      "imageUrl": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1760987001/mywacc_logo_winfwa.svg",
       "altText": "MyWacc Logo",
       "achievements": [
         "Desarrollo y mantenimiento de endpoints de backend utilizando Django y Python",
