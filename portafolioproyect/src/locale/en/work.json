@@ -2,8 +2,9 @@
   "timeline": {
     "start": "Career Start",
     "present": "Present",
-    "studying": "Still studying..."
+    "studying": "Present · Always getting a little better"
   },
+  "achievements": "Achievements",
   "milestones": [
     {
       "id": "career-start",
@@ -11,7 +12,7 @@
       "date": "February 2022",
       "title": "Career Start",
       "description": "Beginning my journey in software development",
-      "icon": "🎯",
+      "icon": "",
       "category": "start"
     },
     {
@@ -21,7 +22,7 @@
       "title": "UTP Full Stack Pool Bootcamp",
       "institution": "Technological University of Pereira",
       "description": "Admitted to the intensive Full Stack development bootcamp",
-      "icon": "🎓",
+      "icon": "",
       "category": "education"
     },
     {
@@ -31,7 +32,7 @@
       "title": "Bootcamp Completion",
       "institution": "Technological University of Pereira",
       "description": "Successfully completed the Full Stack Pool Bootcamp",
-      "icon": "🏆",
+      "icon": "",
       "category": "education"
     },
     {
@@ -41,7 +42,7 @@
       "title": "Full Stack Programmer Diploma",
       "institution": "Technological University of Pereira",
       "description": "Started the Full Stack programming diploma program",
-      "icon": "📚",
+      "icon": "",
       "category": "education"
     },
     {
@@ -51,7 +52,7 @@
       "title": "Diploma Graduation",
       "institution": "Technological University of Pereira", 
       "description": "Successfully completed the Full Stack Programmer Diploma",
-      "icon": "🎓",
+      "icon": "",
       "category": "education"
     },
     {
@@ -60,11 +61,51 @@
       "date": "Mid 2024",
       "title": "Project Development",
       "description": "Started practicing and developing personal projects",
-      "icon": "💻",
+      "icon": "◆",
+      "category": "development"
+    },
+    {
+      "id": "ai-bootcamp-completion",
+      "type": "education",
+      "date": "Mid 2025",
+      "title": "AI Bootcamp Completion",
+      "institution": "Online Program",
+      "description": "Successfully completed the Basic AI Bootcamp, strengthening concepts in neural networks and linear algebra",
+      "icon": "◆",
+      "category": "education"
+    },
+    {
+      "id": "blockchain-projects",
+      "type": "milestone",
+      "date": "Late 2025",
+      "title": "Blockchain Personal Projects",
+      "description": "Started developing personal projects focused on Blockchain technology",
+      "icon": "◆",
       "category": "development"
     }
   ],
   "work": [
+    {
+      "company": "REVELO TALENT CORP",
+      "role": "Software Engineer & AI Technical Analyst",
+      "period": "07/2025 - Present",
+      "startDate": "2025-07-01",
+      "endDate": null,
+      "imageUrlDark": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305503/images_1_fql3uq.jpg",
+      "imageUrlLight": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305507/images_u3nqph.jpg",
+      "altText": "REVELO Logo",
+      "achievements": [
+        "Development of complex, optimized code solutions (Python, JavaScript, AWS) without AI assistance, establishing the Gold Standard for model training.",
+        "Analysis, debugging, and evaluation of AI-generated code, identifying hallucinations, logical inefficiencies, and security vulnerabilities.",
+        "Decomposition of complex engineering problems to audit the model's Chain of Thought, ensuring the AI follows engineering best practices.",
+        "Design and refinement of technical test scenarios to challenge model capabilities in cloud (AWS) and backend development environments.",
+        "Direct contribution to increasing AI agent precision on complex coding tasks through detailed technical feedback and logic correction.",
+        "Creation of a manually-verified software engineering problems and solutions bank used to calibrate model performance against senior engineers.",
+        "Detection and reporting of recurring error patterns in model code generation, enabling targeted adjustments in inference engine training."
+      ],
+      "url": "https://www.revelo.com/",
+      "status": "current"
+    },
     {
       "company": "MyWacc",
       "role": "Full Stack Developer",
@@ -102,30 +143,30 @@
       "status": "completed"
     },
     {
-      "company": "GISOSA",
+      "company": "GIOSA, Gestión Integral y Soluciones en Salud",
       "role": "Backend Developer",
-      "period": "04/2025 - Present",
+      "period": "04/2025 - 12/2025",
       "startDate": "2025-04-01",
-      "endDate": null,
+      "endDate": "2025-12-31",
       "imageUrl": "//www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
       "altText": "GISOSA Logo",
       "achievements": [
-        "Requirements gathering with healthcare system stakeholders",
-        "Design and documentation of robust RESTful APIs",
-        "Integration of internal systems with external platforms like EPS and RIPS portals",
-        "Code refactoring to improve maintainability and performance",
-        "Implementation of unit, integration, and end-to-end tests",
-        "Configuration of development and production environments using Docker and Kubernetes",
-        "Implementation of CI/CD pipelines for efficient and secure deployments"
+        "Participated in designing and developing scalable RESTful APIs for interoperability between health systems, ensuring integrity of critical data.",
+        "Implemented business logic required for compliance with RIPS regulations and DIAN requirements.",
+        "Orchestrated environment migration and configuration using Docker and Kubernetes, establishing CI/CD pipelines to automate deployments.",
+        "Executed refactoring of legacy modules to improve maintainability and designed testing strategies (unit and E2E) to ensure system stability.",
+        "40% reduction in testing deployment times through the implementation of automated CI/CD pipelines.",
+        "30% increase in critical API response speed after codebase refactoring and database query optimization.",
+        "Significant reduction in testing bugs through implementation of an automated test suite and code quality standards."
       ],
       "url": "",
-      "status": "current"
+      "status": "completed"
     }
   ],
   "currentStudies": {
-    "title": "Basic AI Bootcamp",
-    "description": "Strengthening concepts of networks and linear algebra to develop applications with ML models",
+    "title": "Blockchain Development",
+    "description": "Developing personal projects and deepening knowledge in blockchain technology and decentralized applications",
     "period": "Currently",
-    "icon": "🤖"
+    "icon": ""
   }
 }

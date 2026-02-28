@@ -18,6 +18,8 @@ import confluence from '../../assets/confluence-icon.svg';
 import docker from '../../assets/docker-icon.svg';
 import tailwind from '../../assets/tailwind-icon.svg';
 import github from '../../assets/github-icon.svg';
+import vscode from '../../assets/visual-studio-code-icon.svg';
+import claude from '../../assets/claude-icon.svg';
 import './technologies.css';
 
 // Technology data structure for better maintainability
@@ -46,7 +48,9 @@ const techStacks = {
     { icon: rive, name: "Rive", className: "rive" },
     { icon: jira, name: "Jira", className: "jira" } ,
     { icon: confluence, name: "Confluence", className: "confluence" },
-    { icon: github, name: "Github", className: "github" }
+    { icon: github, name: "Github", className: "github" },
+    { icon: vscode, name: "VS Code", className: "code" },
+    { icon: claude, name: "Claude", className: "code" }
   ]
 };
 

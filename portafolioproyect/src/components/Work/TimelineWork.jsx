@@ -22,29 +22,26 @@ const TimelineWork = ({ darkMode }) => {
       date: work.period,
       title: work.company,
       description: work.role,
-      icon: work.status === 'current' ? '💼' : '🏢'
+      icon: ''
     }))
   ];
 
+  // Parsear fechas textuales a Date
+  const getDate = (item) => {
+    if (item.startDate) return new Date(item.startDate);
+    const d = item.date || '';
+    if (d.includes('Febrero') || d.includes('February')) return new Date('2022-02-01');
+    const yearMatch = d.match(/(\d{4})/);
+    const year = yearMatch ? yearMatch[1] : null;
+    if ((d.includes('Mediados') || d.includes('Mid')) && year) return new Date(`${year}-06-01`);
+    if ((d.includes('Finales') || d.includes('Late')) && year) return new Date(`${year}-11-01`);
+    if (d.includes('27/11/2023') || d.includes('11/27/2023')) return new Date('2023-11-27');
+    if (d.includes('14/06/2024') || d.includes('06/14/2024')) return new Date('2024-06-14');
+    return new Date('2099-01-01'); // si no se puede parsear, va al final
+  };
+
   // Ordenar por fecha de inicio
-  const sortedEvents = allEvents.sort((a, b) => {
-    const getDate = (item) => {
-      if (item.startDate) return new Date(item.startDate);
-      if (item.date) {
-        // Manejar fechas especiales
-        if (item.date.includes('Febrero') || item.date.includes('February')) return new Date('2022-02-01');
-        if (item.date.includes('Mediados') || item.date.includes('Mid')) {
-          if (item.date.includes('2022')) return new Date('2022-06-01');
-          if (item.date.includes('2024')) return new Date('2024-06-01');
-        }
-        if (item.date.includes('Finales') || item.date.includes('Late')) return new Date('2022-11-01');
-        if (item.date.includes('27/11/2023') || item.date.includes('11/27/2023')) return new Date('2023-11-27');
-        if (item.date.includes('14/06/2024') || item.date.includes('06/14/2024')) return new Date('2024-06-14');
-      }
-      return new Date();
-    };
-    return getDate(a) - getDate(b);
-  });
+  const sortedEvents = allEvents.sort((a, b) => getDate(a) - getDate(b));
 
   useEffect(() => {
     const observerOptions = {
@@ -127,7 +124,6 @@ const TimelineWork = ({ darkMode }) => {
           {/* Punto de inicio */}
           <div className="treasure-map-start">
             <div className={`start-marker ${darkMode ? 'dark' : 'light'}`}>
-              <span className="start-icon">🎯</span>
               <span className="start-text">{timelineTexts.start || 'Inicio de mi carrera'}</span>
             </div>
           </div>
@@ -146,7 +142,6 @@ const TimelineWork = ({ darkMode }) => {
               <div className={`treasure-card ${darkMode ? 'dark' : 'light'}`}>
                 {/* Fecha con estilo de pergamino */}
                 <div className="treasure-date">
-                  <span className="date-scroll">📜</span>
                   <span className="date-text">{event.date || event.period}</span>
                 </div>
 
@@ -154,13 +149,20 @@ const TimelineWork = ({ darkMode }) => {
                 <div className="company-treasure-logo">
                   {event.type === 'work' ? (
                     <img 
-                      src={event.imageUrl} 
+                      src={
+                        event.imageUrlDark
+                          ? darkMode ? event.imageUrlDark : event.imageUrlLight
+                          : event.imageUrl
+                      }
                       alt={event.altText}
                       className={`company-logo-img ${darkMode ? 'dark' : 'light'}`}
                     />
                   ) : (
                     <div className={`milestone-icon ${darkMode ? 'dark' : 'light'}`}>
-                      <span style={{ fontSize: '40px' }}>{event.icon}</span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                        <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.8"/>
+                      </svg>
                     </div>
                   )}
                 </div>
@@ -177,7 +179,6 @@ const TimelineWork = ({ darkMode }) => {
                   
                   {/* Logros principales */}
                   <div className="achievements-preview">
-                    <span className="achievement-icon">⭐</span>
                     <span className="achievement-count">
                       {event.type === 'work' 
                         ? `${event.achievements?.length || 0} logros`
@@ -187,17 +188,10 @@ const TimelineWork = ({ darkMode }) => {
                 </div>
 
                 {/* Conectores decorativos */}
-                <div className="treasure-connector">
-                  <span className="connector-icon">⚡</span>
-                </div>
+                <div className="treasure-connector"></div>
               </div>
 
-              {/* Efectos decorativos */}
-              <div className="treasure-effects">
-                <span className="effect-sparkle">✨</span>
-                <span className="effect-star">⭐</span>
-                <span className="effect-gem">💎</span>
-              </div>
+              {/* Efectos decorativos - removidos */}
             </div>
           ))}
 
@@ -213,13 +207,15 @@ const TimelineWork = ({ darkMode }) => {
             >
               <div className={`treasure-card ${darkMode ? 'dark' : 'light'}`}>
                 <div className="treasure-date">
-                  <span className="date-scroll">📜</span>
                   <span className="date-text">{currentStudies.period}</span>
                 </div>
 
                 <div className="company-treasure-logo">
                   <div className={`milestone-icon ${darkMode ? 'dark' : 'light'}`}>
-                    <span style={{ fontSize: '40px' }}>{currentStudies.icon}</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.6"/>
+                      <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.8"/>
+                    </svg>
                   </div>
                 </div>
 
@@ -228,23 +224,16 @@ const TimelineWork = ({ darkMode }) => {
                   <h4 className="role-name">{currentStudies.description}</h4>
                 </div>
 
-                <div className="treasure-connector">
-                  <span className="connector-icon">⚡</span>
-                </div>
+                <div className="treasure-connector"></div>
               </div>
 
-              <div className="treasure-effects">
-                <span className="effect-sparkle">✨</span>
-                <span className="effect-star">⭐</span>
-                <span className="effect-gem">💎</span>
-              </div>
+              {/* Efectos decorativos - removidos */}
             </div>
           )}
 
           {/* Punto final */}
           <div className="treasure-map-end">
             <div className={`end-marker ${darkMode ? 'dark' : 'light'}`}>
-              <span className="end-icon">🏆</span>
               <span className="end-text">{timelineTexts.present || 'Presente'}</span>
               <small className="studying-text">{timelineTexts.studying || 'Continúo estudiando...'}</small>
             </div>

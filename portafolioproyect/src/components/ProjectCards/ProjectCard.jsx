@@ -4,6 +4,7 @@ import python from '../../assets/python-icon.svg';
 import css3 from '../../assets/css3-icon.svg';
 import js_icon from '../../assets/js-icon.svg';
 import node_icon from '../../assets/node-icon.svg';
+import gemini_icon from '../../assets/gemini-ai-icon.svg';
 import './project.css';
 
 // SVG Components for better organization and reusability
@@ -95,7 +96,7 @@ const createProjectsData = (t) => [
   {
     id: 5,
     type: t('projects.personal'),
-    title: 'Agente de Chat + AI',
+    title: 'LEAN CHAT (HACKATON)',
     description: t('projects.chatagent.description'),
     githubLink: 'https://github.com/Max1mus5/HACKATON',
     demoLink: 'https://hackaton-three-opal.vercel.app/',
@@ -103,7 +104,8 @@ const createProjectsData = (t) => [
       { icon: js_icon, alt: 'javascript' },
       { icon: python, alt: 'python' },
       { icon: node_icon, alt: 'nodejs' },
-      { icon: css3, alt: 'css3' }
+      { icon: css3, alt: 'css3' },
+      { icon: gemini_icon, alt: 'gemini' }
     ],
     imageUrl: 'https://github.com/Max1mus5/HACKATON/blob/master/public/img/LOGO%20LEAN.png?raw=true',
     altText: 'Chat Agent AI'

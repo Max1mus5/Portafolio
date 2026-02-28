@@ -93,6 +93,7 @@ const AboutMe = ({ darkMode }) => {
           style={{ background: darkMode ? '#222f3e' : '#fff', borderRadius: '50%' }}
         />
       </a>
+
     </div>
   );
 

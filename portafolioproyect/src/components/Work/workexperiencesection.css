@@ -9,15 +9,24 @@
 }
 
 .work-experiences {
-  display: flex;
-  flex-direction: column; /* Muestra las experiencias laborales una encima de la otra */
-  gap: 2rem; /* Ajusta el espacio entre experiencias laborales */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: stretch;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 880px) {
+  .work-experiences {
+    grid-template-columns: 1fr;
+  }
 }
 
 .work-experience {
   border: 1px solid #ccc;
   padding: 1rem;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-experience.dark {
@@ -82,6 +91,7 @@
 
 .achievements-work-experience {
   margin-top: 1rem;
+  flex: 1;
 }
 
 .achievements-title-work-experience {

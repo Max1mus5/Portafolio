@@ -4,8 +4,10 @@ import "./workexperiencesection.css";
 const WorkExperienceSection = ({ darkMode = false }) => {
   const { t } = useTranslation("work"); // Usamos el namespace "work"
 
-  // Obtenemos la traducción de "work" como un array de objetos
-  const workExperiences = t("work", { returnObjects: true });
+  // Obtenemos la traducción de "work" como un array de objetos y ordenamos del más reciente al más antiguo
+  const workExperiences = [...t("work", { returnObjects: true })].sort(
+    (a, b) => new Date(b.startDate) - new Date(a.startDate)
+  );
 
   return (
     <section className="work-experience-section" id="work-experience">
@@ -18,7 +20,11 @@ const WorkExperienceSection = ({ darkMode = false }) => {
             <div className="header-work-experience">
             <img
                 src={
-                  workExperience.altText === "GISOSA Logo"
+                  workExperience.imageUrlDark
+                    ? darkMode
+                      ? workExperience.imageUrlDark
+                      : workExperience.imageUrlLight
+                    : workExperience.altText === "GISOSA Logo"
                     ? darkMode
                       ? "https://res.cloudinary.com/dmz5obrqc/image/upload/v1745967262/portafolio/baz5xhysuawgzpr5lfus.png"
                       : "https://res.cloudinary.com/dmz5obrqc/image/upload/v1745967258/portafolio/wad29jpvqd0b922w5bfi.png"
