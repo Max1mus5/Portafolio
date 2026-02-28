@@ -4,6 +4,7 @@ import Portafolio from './components/portafolio.jsx';
 import { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useTranslation } from 'react-i18next';
+import './locale/i18n.js';
 import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground.jsx';
 import Loader from './components/Loader/Loader.jsx';
 
