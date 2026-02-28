@@ -21,6 +21,7 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
     if (!isAnimated) {
       setIsAnimated(true);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -52,6 +53,7 @@ const Portfolio = ({ language, darkMode, toggleDarkMode }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAnimated]);
   
 

@@ -4,7 +4,6 @@ import Portafolio from './components/portafolio.jsx';
 import { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import { useTranslation } from 'react-i18next';
-import i18n from './locale/i18n.js';
 import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground.jsx';
 import Loader from './components/Loader/Loader.jsx';
 
@@ -60,6 +59,7 @@ function App() {
 
   useEffect(() => {
     i18n.changeLanguage(language);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isLoading) {

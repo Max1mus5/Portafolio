@@ -20,6 +20,7 @@ useEffect(() => {
    if (!window.localStorage.getItem('theme')) {
    window.localStorage.setItem('theme', darkMode ? 'light' : 'dark');
    }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 return (
