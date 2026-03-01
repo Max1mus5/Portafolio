@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './footer.css';
+
+const GITHUB_COMMITS_API = 'https://api.github.com/repos/Max1mus5/Portafolio/commits/master';
 
 // Email icon component extracted for better maintainability
 const EmailIcon = () => (
@@ -11,14 +14,56 @@ const EmailIcon = () => (
 
 const Footer = ({ darkMode, emailcopied, handleEmailCopy }) => {
   const { t } = useTranslation('footer');
-  
-  // Format current date based on locale
+  const [lastCommit, setLastCommit] = useState(null);
+  const [commitStatus, setCommitStatus] = useState('loading'); // 'loading' | 'success' | 'error'
+
+  useEffect(() => {
+    fetch(GITHUB_COMMITS_API)
+      .then(res => {
+        if (!res.ok) throw new Error('GitHub API error');
+        return res.json();
+      })
+      .then(data => {
+        setLastCommit({
+          date: new Date(data.commit.author.date),
+          // Take only the first line of the commit message
+          message: data.commit.message.split('\n')[0],
+          sha: data.sha.slice(0, 7),
+          url: data.html_url,
+        });
+        setCommitStatus('success');
+      })
+      .catch(() => setCommitStatus('error'));
+  }, []);
+
   const currentDate = new Date();
-  const formattedDate = new Intl.DateTimeFormat(t('locale'), { 
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }).format(currentDate);
+
+  const formatDate = (date) =>
+    new Intl.DateTimeFormat(t('locale'), {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(date);
+
+  const renderLastUpdate = () => {
+    if (commitStatus === 'loading') {
+      return <span className="commit-loading">{t('footer.lastUpdateLoading')}</span>;
+    }
+    if (commitStatus === 'error') {
+      return <span>{t('footer.lastUpdateError')}</span>;
+    }
+    return (
+      <a
+        href={lastCommit.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="commit-link"
+        data-tooltip={`${lastCommit.sha} — ${lastCommit.message}`}
+      >
+        {t('footer.lastUpdate', { date: formatDate(lastCommit.date) })}
+      </a>
+    );
+  };
 
   return (
     <footer className={`footer ${darkMode ? 'dark' : 'light'}`}>
@@ -48,9 +93,9 @@ const Footer = ({ darkMode, emailcopied, handleEmailCopy }) => {
             </div>
           </div>
 
-          {/* Last Update Information */}
+          {/* Last Update — fetched dynamically from GitHub API */}
           <div className="updated">
-            {t('footer.lastUpdate', { date: formattedDate })}
+            {renderLastUpdate()}
           </div>
         </div>
       </div>

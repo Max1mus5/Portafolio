@@ -170,6 +170,61 @@
   opacity: 1;
 }
 
+/* Commit link — clickable last-update date */
+.commit-link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.commit-link:hover {
+  color: #4bcffa;
+  border-bottom-color: #4bcffa;
+}
+
+/* Tooltip shown on hover via data-tooltip attribute */
+.commit-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(30, 30, 40, 0.95);
+  color: #f9fafb;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(75, 207, 250, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.commit-link:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Loading pulse animation */
+.commit-loading {
+  opacity: 0.5;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
 /* Animations */
 @keyframes fadeInOut {
   0% {

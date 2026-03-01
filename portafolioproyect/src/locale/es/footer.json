@@ -9,6 +9,9 @@
       "ariaLabel": "Copy email address",
       "copied": "Copied"
     },
-    "lastUpdate": "Last Update: December 25 2024"
+    "lastUpdate": "Last Update: {{date}}",
+    "lastUpdateLoading": "Loading last update...",
+    "lastUpdateError": "Last Update: unavailable",
+    "commitTooltip": "Commit: {{message}}"
   }
 }

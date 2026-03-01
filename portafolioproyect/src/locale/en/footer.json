@@ -1,7 +1,7 @@
-{
+﻿{
   "footer": {
     "locale": "es-ES",
-    "copyright": "© {{year}} Jeronimo Riveros",
+    "copyright": " {{year}} Jeronimo Riveros",
     "rights": "Todos los derechos Reservados",
     "madeWith": "Hecho con React",
     "email": {
@@ -9,6 +9,9 @@
       "ariaLabel": "Copiar dirección de correo electrónico",
       "copied": "Copiado"
     },
-    "lastUpdate": "Última Actualización: 25 de Diciembre de 2024"
+    "lastUpdate": "Última Actualización: {{date}}",
+    "lastUpdateLoading": "Cargando última actualización...",
+    "lastUpdateError": "Última Actualización: no disponible",
+    "commitTooltip": "Commit: {{message}}"
   }
 }
