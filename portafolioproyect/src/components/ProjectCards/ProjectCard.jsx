@@ -71,7 +71,7 @@ const createProjectsData = (t) => [
     title: 'Graphicator',
     description: t('projects.graphicator.description'),
     githubLink: 'https://github.com/Max1mus5/Computacion-Grafica/tree/main/GraphicatorProjectDjango',
-    demoLink: 'https://computacion-grafica-proyecto-visor.onrender.com',
+    demoLink: 'https://computacion-grafica-graficador.onrender.com/',
     technologies: [
       { icon: python, alt: 'python' },
       { icon: css3, alt: 'css3' }
