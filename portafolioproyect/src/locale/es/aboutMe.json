@@ -2,7 +2,7 @@
   "about": {
     "title": {
       "name": "Jerónimo Riveros",
-      "role": "Fullstack Dev"
+      "role": "Ingeniero Backend & IA"
     },
     "social": {
       "github": "Github",
@@ -14,42 +14,42 @@
       }
     },
     "description": {
-      "full":"Soy un Desarrollador Full Stack con habilidades en tecnologías clave como JavaScript, React, Node.js, Express, MySQL, entre otras. Mi enfoque se centra en la resolución efectiva de problemas y en superar la expectativas. Me destaco por mi capacidad para colaborar en equipo y adaptarme rápidamente a nuevos entornos y tecnologías. Busco constantemente oportunidades para expandir mi conocimiento y mejorar mis habilidades técnicas. Con una actitud proactiva y un compromiso con la excelencia, estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe.",
+      "full": "Ingeniero de Sistemas Backend e IA con más de 4 años de experiencia construyendo, escalando y auditando sistemas listos para producción. Experto en arquitectura backend nativa en la nube (Python, TypeScript, Rust) e integración de soluciones basadas en LLMs, con enfoque en confiabilidad, seguridad y observabilidad. Trayectoria comprobada en refactorización de arquitecturas heredadas, automatización de pipelines CI/CD y auditoría rigurosa de modelos de IA.",
       "intro": "Soy un",
-      "role": " Desarrollador Full Stack",
-      "withSkills": "con habilidades en tecnologías clave como",
-      "techList":"JavaScript, React, Node.js, Express, MySQL",
-      "andOthers": "entre otras.",
+      "role": " Ingeniero Backend & IA",
+      "withSkills": "con más de 4 años de experiencia en",
+      "techList": "Python, TypeScript, Node.js, React, AWS, Docker, LLMs",
+      "andOthers": "y más.",
       "focus": {
-        "prefix": "Mi enfoque se centra en la",
-        "skill1": "resolución efectiva de problemas",
-        "and": "y en",
-        "skill2": "superar expectativas"
+        "prefix": "Me especializo en",
+        "skill1": "arquitectura backend nativa en la nube",
+        "and": "e",
+        "skill2": "integración de LLMs y auditoría de IA"
       },
       "abilities": {
-        "prefix": "Me destaco por mi capacidad para",
-        "soft1": "colaborar en equipo",
+        "prefix": "Tengo trayectoria comprobada en",
+        "soft1": "refactorización de sistemas heredados",
         "and": "y",
-        "soft2": "adaptarme rápidamente",
-        "suffix": "a nuevos entornos y tecnologías."
+        "soft2": "automatización de pipelines CI/CD",
+        "suffix": "en entornos de producción críticos."
       },
       "growth": {
-        "prefix": "Busco constantemente oportunidades para",
-        "growth1": "expandir mi conocimiento",
-        "and": "y",
-        "growth2": "mejorar mis habilidades técnicas"
+        "prefix": "Estoy comprometido con",
+        "growth1": "la confiabilidad y observabilidad",
+        "and": "y las",
+        "growth2": "buenas prácticas de ingeniería"
       },
       "attitude": {
         "prefix": "Con una",
-        "att1": "actitud proactiva",
+        "att1": "mentalidad orientada a la seguridad",
         "and": "y un",
-        "att2": "compromiso con la excelencia",
-        "suffix": "estoy preparado para enfrentar desafíos y contribuir al éxito de cualquier proyecto en el que participe."
+        "att2": "enfoque orientado a resultados",
+        "suffix": "entrego soluciones escalables y de alto rendimiento con impacto real."
       }
     },
     "cv": {
       "label": "Descargar CV",
-      "url": "https://drive.google.com/file/d/1AzV0LbbKI7ReW6AJW9IDhEBrRKx3XWnR/view?usp=sharing"
+      "url": "https://drive.google.com/file/d/1gx6kTOGZDooF0E4h-k6zXU7QDx12ehti/view?usp=drive_link"
     }
   }
 }

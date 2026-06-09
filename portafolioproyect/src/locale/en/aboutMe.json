@@ -2,7 +2,7 @@
   "about": {
     "title": {
       "name": "Jerónimo Riveros",
-      "role": "Fullstack Developer"
+      "role": "Backend & AI Systems Engineer"
     },
     "social": {
       "github": "Github",
@@ -14,42 +14,42 @@
       }
     },
     "description": {
-      "full":"I am a Full Stack developer with skills in key technologies such as JavaScript, React, Node.js, Express, MySQL, among others. My focus is on effective problem solving and exceeding expectations. I excel in my ability to collaborate in a team and adapt quickly to new environments and technologies. I constantly seek opportunities to expand my knowledge and improve my technical skills. With a proactive attitude and a commitment to excellence, I am prepared to face challenges and contribute to the success of any project I am involved in.",
-      "intro": "I am a",
-      "role": " Full Stack developer",
-      "withSkills": "with expertise in key technologies such as",
-      "techList": "JavaScript, React, Node.js, Express, MySQL",
-      "andOthers": "among others.",
+      "full": "Versatile Backend & AI Systems Engineer with over 4 years of experience building, scaling, and auditing production-ready systems. Expert in architecting cloud-native backends (Python, TypeScript, Rust) and integrating LLM-based solutions with a focus on reliability, security, and observability. Proven track record in refactoring legacy architectures, automating CI/CD pipelines, and executing rigorous AI model auditing to ensure high-performance, scalable software solutions.",
+      "intro": "I'm a versatile",
+      "role": " Backend & AI Systems Engineer",
+      "withSkills": "with 4+ years of experience in",
+      "techList": "Python, TypeScript, Node.js, React, AWS, Docker, LLMs",
+      "andOthers": "and more.",
       "focus": {
-        "prefix": "My focus is on",
-        "skill1": "effective problem-solving",
+        "prefix": "I specialize in",
+        "skill1": "cloud-native backend architecture",
         "and": "and",
-        "skill2": "exceeding expectations"
+        "skill2": "LLM integration & AI auditing"
       },
       "abilities": {
-        "prefix": "I excel at",
-        "soft1": "team collaboration",
+        "prefix": "I have a proven track record in",
+        "soft1": "refactoring legacy systems",
         "and": "and",
-        "soft2": "quickly adapting",
-        "suffix": "to new environments and technologies."
+        "soft2": "automating CI/CD pipelines",
+        "suffix": "for production-ready environments."
       },
       "growth": {
-        "prefix": "I constantly seek opportunities to",
-        "growth1": "expand my knowledge",
+        "prefix": "I'm committed to",
+        "growth1": "reliability and observability",
         "and": "and",
-        "growth2": "enhance my technical skills"
+        "growth2": "engineering best practices"
       },
       "attitude": {
         "prefix": "With a",
-        "att1": "proactive attitude",
+        "att1": "security-first mindset",
         "and": "and a",
-        "att2": "commitment to excellence",
-        "suffix": "I am prepared to face challenges and contribute to the success of any project I participate in."
+        "att2": "results-driven approach",
+        "suffix": "I deliver scalable, high-performance solutions that make a real impact."
       }
     },
     "cv": {
       "label": "Download CV",
-      "url": "https://drive.google.com/file/d/1PHIEFD1uDyxHD2O32_eEabU6x7CdqDNq/view?usp=sharing"
+      "url": "https://drive.google.com/file/d/1fuTjdJgYhdh_EVzeprB5tPfdNTlVXTdL/view?usp=sharing"
     }
   }
 }

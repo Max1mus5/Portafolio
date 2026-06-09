@@ -88,9 +88,9 @@
     {
       "company": "REVELO TALENT CORP",
       "role": "Software Engineer & AI Technical Analyst",
-      "period": "07/2025 - Present",
+      "period": "07/2025 - 05/2026",
       "startDate": "2025-07-01",
-      "endDate": null,
+      "endDate": "2026-05-31",
       "imageUrlDark": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305503/images_1_fql3uq.jpg",
       "imageUrlLight": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305507/images_u3nqph.jpg",
       "altText": "REVELO Logo",
@@ -104,7 +104,7 @@
         "Detection and reporting of recurring error patterns in model code generation, enabling targeted adjustments in inference engine training."
       ],
       "url": "https://www.revelo.com/",
-      "status": "current"
+      "status": "completed"
     },
     {
       "company": "MyWacc",
@@ -136,8 +136,7 @@
       "achievements": [
         "Successful styling and animation of landing pages",
         "Establishment of code standards and best practices in the frontend team",
-        "Implementation of new features in React.js, improving user experience",
-        "Application performance optimization, reducing loading times by 40%"
+        "Implementation of new features in React.js, improving user experience"
       ],
       "url": "https://www.wmt.cl/",
       "status": "completed"
@@ -148,7 +147,7 @@
       "period": "04/2025 - 12/2025",
       "startDate": "2025-04-01",
       "endDate": "2025-12-31",
-      "imageUrl": "//www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
+      "imageUrl": "https://www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
       "altText": "GISOSA Logo",
       "achievements": [
         "Participated in designing and developing scalable RESTful APIs for interoperability between health systems, ensuring integrity of critical data.",

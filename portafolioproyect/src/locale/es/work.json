@@ -84,13 +84,13 @@
       "category": "desarrollo"
     }
   ],
-  "work": [
+"work": [
     {
       "company": "REVELO TALENT CORP",
       "role": "Ingeniero de Software & Analista Técnico de IA",
-      "period": "07/2025 - Presente",
+      "period": "07/2025 - 05/2026",
       "startDate": "2025-07-01",
-      "endDate": null,
+      "endDate": "2026-05-31",
       "imageUrlDark": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305503/images_1_fql3uq.jpg",
       "imageUrlLight": "https://res.cloudinary.com/dmz5obrqc/image/upload/v1772305507/images_u3nqph.jpg",
       "altText": "REVELO Logo",
@@ -104,7 +104,7 @@
         "Detección y reporte de patrones de error recurrentes en la generación de código del modelo, permitiendo ajustes específicos en el entrenamiento del motor de inferencia."
       ],
       "url": "https://www.revelo.com/",
-      "status": "actual"
+      "status": "finalizado"
     },
     {
       "company": "MyWacc",
@@ -136,8 +136,7 @@
       "achievements": [
         "Estilizado y animación de landings exitosas",
         "Establecimiento de estándares de código y mejores prácticas en el equipo de frontend",
-        "Implementación de nuevas funcionalidades en React.js, mejorando la experiencia de usuario",
-        "Optimización del rendimiento de la aplicación, reduciendo los tiempos de carga en un 40%"
+        "Implementación de nuevas funcionalidades en React.js, mejorando la experiencia de usuario"
       ],
       "url": "https://www.wmt.cl/",
       "status": "finalizado"
@@ -148,7 +147,7 @@
       "period": "04/2025 - 12/2025",
       "startDate": "2025-04-01",
       "endDate": "2025-12-31",
-      "imageUrl": "//www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
+      "imageUrl": "https://www.gisosa.com/wp-content/uploads/2018/12/slider-logo.png",
       "altText": "GISOSA Logo",
       "achievements": [
         "Participé en el diseño y desarrollo de APIs RESTful escalables para la interoperabilidad entre sistemas de salud, asegurando la integridad de datos críticos.",
